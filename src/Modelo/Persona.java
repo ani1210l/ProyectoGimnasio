@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Persona {
 
-    private String cod_persona;
+    private int cod_persona;
     private String per_cedula;
     private String per_nombre;
     private String per_apellido;
@@ -15,7 +15,7 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String cod_persona, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
+    public Persona(int cod_persona, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
         this.cod_persona = cod_persona;
         this.per_cedula = per_cedula;
         this.per_nombre = per_nombre;
@@ -25,11 +25,11 @@ public class Persona {
         this.per_direccion = per_direccion;
     }
 
-    public String getCod_persona() {
+    public int getCod_persona() {
         return cod_persona;
     }
 
-    public void setCod_persona(String cod_persona) {
+    public void setCod_persona(int cod_persona) {
         this.cod_persona = cod_persona;
     }
 

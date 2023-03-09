@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Asus
+ * @author tatiana
  */
 public class ModeloPersona extends Persona {
     ConexionPG conpg = new ConexionPG();
@@ -23,7 +23,7 @@ public class ModeloPersona extends Persona {
     public ModeloPersona() {
     }
 
-    public ModeloPersona(String cod_persona, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
+    public ModeloPersona(int cod_persona, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
         super(cod_persona, per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion);
     }
 
@@ -56,7 +56,7 @@ public class ModeloPersona extends Persona {
                 Persona persona = new Persona();
 
                 //Todo lo que haga en la sentencia define como voy a extraer los datos
-                
+                persona.setCod_persona(rs.getInt("cod_persona"));
                 persona.setPer_cedula(rs.getString("per_cedula"));
                 persona.setPer_nombre(rs.getString("per_nombre"));
                 persona.setPer_apellido(rs.getString("per_apellido"));
@@ -93,7 +93,7 @@ public class ModeloPersona extends Persona {
                 Persona persona = new Persona();
 
                 //Todo lo que haga en la sentencia define como voy a extraer los datos
-               // persona.setPer_codigo(rs.getInt("per_codigo"));
+               persona.setCod_persona(rs.getInt("cod_persona"));
                 persona.setPer_cedula(rs.getString("per_cedula"));
                 persona.setPer_nombre(rs.getString("per_nombre"));
                 persona.setPer_apellido(rs.getString("per_apellido"));
@@ -119,13 +119,13 @@ public class ModeloPersona extends Persona {
         int codigo = 0;
         try {
 
-            String sql = "select per_codigo from persona where per_cedula = '" + cedula + "'";
+            String sql = "select cod_persona from persona where per_cedula = '" + cedula + "'";
 
             ResultSet rs = conpg.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
             //Pasar de "ResultSet" a "List"
             while (rs.next()) {
-                codigo = rs.getInt("per_codigo"); //Trae el codigo de la persona recien creada
+                codigo = rs.getInt("cod_persona"); //Trae el codigo de la persona recien creada
 
             }
 
