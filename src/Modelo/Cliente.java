@@ -9,16 +9,20 @@ public class Cliente extends Persona {
     private Date fecha_ingreso;
     private boolean estado;
 
-    public Cliente(int cliente_codigo, Date fecha_ingreso, boolean estado, String persona_codigo, String cedula, String nombre, String apellido, Date fechaNacimiento, String telefono, String direccion) {
-        super(persona_codigo, cedula, nombre, apellido, fechaNacimiento, telefono, direccion);
+    public Cliente(int cliente_codigo, Date fecha_ingreso, boolean estado) {
         this.cliente_codigo = cliente_codigo;
         this.fecha_ingreso = fecha_ingreso;
         this.estado = estado;
     }
 
-    public Cliente(String persona_codigo, String cedula, String nombre, String apellido, Date fechaNacimiento, String telefono, String direccion) {
-        super(persona_codigo, cedula, nombre, apellido, fechaNacimiento, telefono, direccion);
+    public Cliente(int cliente_codigo, Date fecha_ingreso, boolean estado, int cod_persona, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
+        super(cod_persona, per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion);
+        this.cliente_codigo = cliente_codigo;
+        this.fecha_ingreso = fecha_ingreso;
+        this.estado = estado;
     }
+
+
     
 
     public int getCliente_codigo() {

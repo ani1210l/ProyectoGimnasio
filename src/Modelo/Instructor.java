@@ -8,15 +8,16 @@ import java.sql.Date;
  */
 public class Instructor extends Empleado {
 
-    int instructor_codigo;
-    String area_trabajo;
-    String descripcion;
+   private int instructor_codigo;
+   private String area_trabajo;
+   private String descripcion;
 
-    public Instructor(int instructor_codigo, String area_trabajo, String descripcion, int empleado_codigo, double salario_emp, int horario_codigo, boolean estado, String persona_codigo, String cedula, String nombre, String apellido, Date fechaNacimiento, String telefono, String direccion) {
-        super(empleado_codigo, salario_emp, horario_codigo, estado, persona_codigo, cedula, nombre, apellido, fechaNacimiento, telefono, direccion);
-        this.instructor_codigo = instructor_codigo;
-        this.area_trabajo = area_trabajo;
-        this.descripcion = descripcion;
+    public Instructor(int empleado_codigo, double salario_emp, int horario_codigo, boolean estado) {
+        super(empleado_codigo, salario_emp, horario_codigo, estado);
+    }
+
+    public Instructor(int empleado_codigo, double salario_emp, int horario_codigo, boolean estado, int cod_persona, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
+        super(empleado_codigo, salario_emp, horario_codigo, estado, cod_persona, per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion);
     }
 
     public int getInstructor_codigo() {
@@ -43,4 +44,9 @@ public class Instructor extends Empleado {
         this.descripcion = descripcion;
     }
 
+    
+    
+    
+    
+    
 }
