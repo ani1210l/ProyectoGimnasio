@@ -7,19 +7,24 @@ public class Cliente extends Persona {
 
     private int cliente_codigo;
     private Date fecha_ingreso;
-    private boolean estado;
+   private int cli_codper;
 
-    public Cliente(int cliente_codigo, Date fecha_ingreso, boolean estado) {
-        this.cliente_codigo = cliente_codigo;
-        this.fecha_ingreso = fecha_ingreso;
-        this.estado = estado;
+    public Cliente() {
     }
 
-    public Cliente(int cliente_codigo, Date fecha_ingreso, boolean estado, int cod_persona, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
+   
+
+    public Cliente(int cliente_codigo, Date fecha_ingreso, int cli_codper) {
+        this.cliente_codigo = cliente_codigo;
+        this.fecha_ingreso = fecha_ingreso;
+        this.cli_codper = cli_codper;
+    }
+
+    public Cliente(int cliente_codigo, Date fecha_ingreso, int cli_codper, int cod_persona, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
         super(cod_persona, per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion);
         this.cliente_codigo = cliente_codigo;
         this.fecha_ingreso = fecha_ingreso;
-        this.estado = estado;
+        this.cli_codper = cli_codper;
     }
 
 
@@ -41,12 +46,13 @@ public class Cliente extends Persona {
         this.fecha_ingreso = fecha_ingreso;
     }
 
-    public boolean isEstado() {
-        return estado;
+    public int getCli_codper() {
+        return cli_codper;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setCli_codper(int cli_codper) {
+        this.cli_codper = cli_codper;
     }
+
 
 }
