@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Taataiana Lalvay
+ * @author Taataiana 
  */
 public class Modelo_Servicio extends Servicio {
 

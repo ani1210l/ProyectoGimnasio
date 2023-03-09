@@ -8,7 +8,7 @@ import java.sql.Date;
 
 /**
  *
- * @author Usuario
+ * @author Tatiana
  */
 public class Servicio {
 
