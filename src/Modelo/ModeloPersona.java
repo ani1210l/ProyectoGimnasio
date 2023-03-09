@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author tatiana
+ * @author Tatiana Lalvay
  */
 public class ModeloPersona extends Persona {
     ConexionPG conpg = new ConexionPG();
