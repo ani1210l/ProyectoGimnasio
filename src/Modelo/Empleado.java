@@ -3,6 +3,7 @@ package Modelo;
 
 import java.sql.Date;
 
+//io xd
 
 public class Empleado extends Persona{
     
