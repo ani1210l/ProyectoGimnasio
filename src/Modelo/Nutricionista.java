@@ -1,16 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo;
 
 import java.sql.Date;
 
 /**
  *
- * @author Usuario
+ * @author Carla Leon
  */
-public class Nutricionista extends Empleado{
+public class Nutricionista extends Empleado {
 
     private int nutricionista_codigo;
     private String rutina;
@@ -38,6 +34,5 @@ public class Nutricionista extends Empleado{
     public void setRutina(String rutina) {
         this.rutina = rutina;
     }
-
 
 }
