@@ -3,7 +3,10 @@ package Modelo;
 
 import java.sql.Date;
 
-//io xd
+/**
+ *
+ * @author  Santiago Tapia
+ */
 
 public class Empleado extends Persona{
     
