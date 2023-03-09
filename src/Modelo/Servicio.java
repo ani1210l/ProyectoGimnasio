@@ -8,72 +8,65 @@ import java.sql.Date;
 
 /**
  *
- * @author Usuario
+ * @author Tatiana
  */
 public class Servicio {
 
-    int servicio_codigo;
-    String hora;
-    String detalle;
-    boolean estado;
-    String nombre;
-    Date fechaIngreso;
+    private int ser_codigo;
+    private String ser_hora;
+    private String serv_tipo;
+    private String serv_detalle;
+    private Date serv_fechaIngreso;
 
-    public Servicio(int servicio_codigo, String hora, String detalle, boolean estado, String nombre, Date fechaIngreso) {
-        this.servicio_codigo = servicio_codigo;
-        this.hora = hora;
-        this.detalle = detalle;
-        this.estado = estado;
-        this.nombre = nombre;
-        this.fechaIngreso = fechaIngreso;
+    public Servicio() {
     }
 
-    public int getServicio_codigo() {
-        return servicio_codigo;
+    public Servicio(int ser_codigo, String ser_hora, String serv_tipo, String serv_detalle, Date serv_fechaIngreso) {
+        this.ser_codigo = ser_codigo;
+        this.ser_hora = ser_hora;
+        this.serv_tipo = serv_tipo;
+        this.serv_detalle = serv_detalle;
+        this.serv_fechaIngreso = serv_fechaIngreso;
     }
 
-    public void setServicio_codigo(int servicio_codigo) {
-        this.servicio_codigo = servicio_codigo;
+    public int getSer_codigo() {
+        return ser_codigo;
     }
 
-    public String getHora() {
-        return hora;
+    public void setSer_codigo(int ser_codigo) {
+        this.ser_codigo = ser_codigo;
     }
 
-    public void setHora(String hora) {
-        this.hora = hora;
+    public String getSer_hora() {
+        return ser_hora;
     }
 
-    public String getDetalle() {
-        return detalle;
+    public void setSer_hora(String ser_hora) {
+        this.ser_hora = ser_hora;
     }
 
-    public void setDetalle(String detalle) {
-        this.detalle = detalle;
+    public String getServ_tipo() {
+        return serv_tipo;
     }
 
-    public boolean isEstado() {
-        return estado;
+    public void setServ_tipo(String serv_tipo) {
+        this.serv_tipo = serv_tipo;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public String getServ_detalle() {
+        return serv_detalle;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setServ_detalle(String serv_detalle) {
+        this.serv_detalle = serv_detalle;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public Date getServ_fechaIngreso() {
+        return serv_fechaIngreso;
     }
 
-    public Date getFechaIngreso() {
-        return fechaIngreso;
-    }
-
-    public void setFechaIngreso(Date fechaIngreso) {
-        this.fechaIngreso = fechaIngreso;
+    public void setServ_fechaIngreso(Date serv_fechaIngreso) {
+        this.serv_fechaIngreso = serv_fechaIngreso;
     }
 
 }
