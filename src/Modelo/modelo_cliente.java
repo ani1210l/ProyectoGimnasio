@@ -36,7 +36,7 @@ public class modelo_cliente extends Cliente{
  
     
       public SQLException crearCliente() {
-        String sql = "INSERT INTO Cliente(Cod_cliente, cliFecha_ingreso,cli_codper) VALUES ('" + getCliente_codigo()+ "', '" + getFecha_ingreso()+ "', '"  + "', '" + getCli_codper()  + "');";
+        String sql = "INSERT INTO Cliente(Cod_cliente, cliFecha_ingreso,cli_codper) VALUES ('" + getCliente_codigo()+ "', '" + getFecha_ingreso()+ "', '" + getCli_codper()  + "');";
 
         return conpg.accion(sql);
     }
