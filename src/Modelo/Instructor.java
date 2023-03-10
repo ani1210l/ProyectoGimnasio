@@ -4,7 +4,7 @@ import java.sql.Date;
 
 /**
  *
- * @author Carla Leon
+ * @author Michelle Cuzo
  */
 public class Instructor extends Empleado {
 

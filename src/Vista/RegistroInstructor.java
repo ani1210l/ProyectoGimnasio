@@ -43,7 +43,7 @@ public class RegistroInstructor extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         txtsalarioins = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jCmbhorarioins = new javax.swing.JComboBox<String>();
+        jCmbhorarioins = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         fechanacimins = new com.toedter.calendar.JDateChooser();
         jLabel20 = new javax.swing.JLabel();
@@ -133,7 +133,7 @@ public class RegistroInstructor extends javax.swing.JFrame {
         jLabel19.setText("Descripción:");
         jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 650, -1, -1));
 
-        jCmbhorarioins.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino" }));
+        jCmbhorarioins.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Matutino", "Vespertino" }));
         jPanel1.add(jCmbhorarioins, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 530, 230, -1));
 
         jLabel9.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 18)); // NOI18N
