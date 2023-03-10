@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author  Santiago Tapia
+ * @author  Santiago Tapia 
  */
 public class Modelo_nutri extends Nutricionista {
     ConexionPG conpg = new ConexionPG();
