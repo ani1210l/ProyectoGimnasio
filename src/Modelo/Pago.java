@@ -13,15 +13,20 @@ import java.sql.Date;
 public class Pago {
     
      int pago_codigo;
-     String deuda;
+     String deuda,pag_rutina;
      Date fecha;
-     int cliente_servicio_codigo;
+     int cod_cliente;
 
-    public Pago(int pago_codigo, String deuda, Date fecha, int cliente_servicio_codigo) {
+    public Pago() {
+    }
+
+     
+    public Pago(int pago_codigo, String deuda, String pag_rutina, Date fecha, int cod_cliente) {
         this.pago_codigo = pago_codigo;
         this.deuda = deuda;
+        this.pag_rutina = pag_rutina;
         this.fecha = fecha;
-        this.cliente_servicio_codigo = cliente_servicio_codigo;
+        this.cod_cliente = cod_cliente;
     }
 
     public int getPago_codigo() {
@@ -40,6 +45,14 @@ public class Pago {
         this.deuda = deuda;
     }
 
+    public String getPag_rutina() {
+        return pag_rutina;
+    }
+
+    public void setPag_rutina(String pag_rutina) {
+        this.pag_rutina = pag_rutina;
+    }
+
     public Date getFecha() {
         return fecha;
     }
@@ -48,19 +61,13 @@ public class Pago {
         this.fecha = fecha;
     }
 
-    public int getCliente_servicio_codigo() {
-        return cliente_servicio_codigo;
+    public int getCod_cliente() {
+        return cod_cliente;
     }
 
-    public void setCliente_servicio_codigo(int cliente_servicio_codigo) {
-        this.cliente_servicio_codigo = cliente_servicio_codigo;
+    public void setCod_cliente(int cod_cliente) {
+        this.cod_cliente = cod_cliente;
     }
-
-
-
-
-
-
-
+     
 }
 
