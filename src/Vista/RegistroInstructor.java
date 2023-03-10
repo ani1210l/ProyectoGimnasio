@@ -81,7 +81,7 @@ public class RegistroInstructor extends javax.swing.JFrame {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 10, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        jLabel3.setText("One pince");
+        jLabel3.setText("One Piece");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 50, 100, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 90));
