@@ -4,6 +4,9 @@
 
 package com.mycompany.proyecto_gimnasio;
 
+import Controlador.ControladorMenu;
+import Vista.Menu;
+
 /**
  *
  * @author frank
@@ -11,6 +14,8 @@ package com.mycompany.proyecto_gimnasio;
 public class Proyecto_Gimnasio {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Menu vistaLogin = new Menu();
+        ControladorMenu control = new ControladorMenu(vistaLogin);
+        control.iniciaControl();
     }
 }
