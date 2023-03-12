@@ -49,7 +49,7 @@ public class ControladorPersona {
         vista.getJButtonAcuatlizarPersona().addActionListener(l -> cargarPersonasTabla());
         vista.getJButtonModificarPersona().addActionListener(l -> cargarDatosPersonaEnTXT());
         vista.getjButtonCancelar().addActionListener(l -> botonCancelar());
-        vista.getjButtonGuardar().addActionListener(l-> crearPersona());
+        vista.getjButtonGuardar().addActionListener(l -> crearPersona());
         buscarPersona();
     }
 
@@ -163,8 +163,8 @@ public class ControladorPersona {
                 vista.getTxtdireccion().setText(persona.getPer_direccion());
 
                 if (persona.crearPersona() == null) {
-
-                    System.out.println("Persona creada satisfactoriamente");
+                    JOptionPane.showMessageDialog(null, "Persona creada");
+// System.out.println("Persona creada satisfactoriamente");
                     crearPersona = true;
                 } else {
                     System.out.println("La persona NO se pudo crear");
