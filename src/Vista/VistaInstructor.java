@@ -38,7 +38,7 @@ public class VistaInstructor extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblregistrosservicios = new javax.swing.JTable();
+        tblregistroinst = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,7 +51,7 @@ public class VistaInstructor extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(51, 153, 255));
-        jLabel15.setText("REGISTROS DE CLIENTES - SERVICIOS");
+        jLabel15.setText("REGISTRO INSTRUCTOR");
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LOGO.jpg"))); // NOI18N
 
@@ -64,7 +64,9 @@ public class VistaInstructor extends javax.swing.JFrame {
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addContainerGap(475, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel15)
                 .addContainerGap())
         );
@@ -75,11 +77,9 @@ public class VistaInstructor extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(4, 4, 4)
                 .addComponent(jLabel15)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 102));
@@ -140,19 +140,19 @@ public class VistaInstructor extends javax.swing.JFrame {
                 .addGap(27, 27, 27))
         );
 
-        tblregistrosservicios.setBackground(new java.awt.Color(0, 153, 255));
-        tblregistrosservicios.setModel(new javax.swing.table.DefaultTableModel(
+        tblregistroinst.setBackground(new java.awt.Color(0, 153, 255));
+        tblregistroinst.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "cliente_Serv_cod", "Fechaingreso", "Fechafin", "cod_cliente", "cod_servicio"
+                "ins_codigo", "ins_areatrabajo", "ins_descripcion", "ins_codemp"
             }
         ));
-        jScrollPane1.setViewportView(tblregistrosservicios);
+        jScrollPane1.setViewportView(tblregistroinst);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -228,7 +228,7 @@ public class VistaInstructor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblregistrosservicios;
+    private javax.swing.JTable tblregistroinst;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

@@ -80,7 +80,6 @@ public class VistaPersona extends javax.swing.JInternalFrame {
         this.JTextFieldBuscarPersona = JTextFieldBuscarPersona;
     }
 
-
     public JDateChooser getFechanacimiento() {
         return fechanacimiento;
     }
@@ -184,8 +183,6 @@ public class VistaPersona extends javax.swing.JInternalFrame {
     public void setjButtonGuardar(JButton jButtonGuardar) {
         this.jButtonGuardar = jButtonGuardar;
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -250,51 +247,44 @@ public class VistaPersona extends javax.swing.JInternalFrame {
         jPanel2.add(registro, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 250, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/registro-en-linea.png"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/sombrero (1).png"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, -1, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LOGO.jpg"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("One Piece");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 100, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 50, 100, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 90));
 
-        jLabel13.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel13.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         jLabel13.setText("Codigo:");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         txtcodcli.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtcodcli, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 40, 30));
 
-        jLabel4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         jLabel4.setText("Cedula:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
         jPanel1.add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 260, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         jLabel5.setText("Nombre:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         jLabel6.setText("Apellido:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
         jPanel1.add(txtapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 260, -1));
 
-        jLabel8.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         jLabel8.setText("Fecha Nacimiento:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, -1));
         jPanel1.add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 230, -1));
 
-        jLabel9.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         jLabel9.setText("Direccion:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, -1, -1));
         jPanel1.add(fechanacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 190, -1));
@@ -306,28 +296,35 @@ public class VistaPersona extends javax.swing.JInternalFrame {
         jPanel1.add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 280, 30));
         jPanel1.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 240, -1));
 
-        jLabel11.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         jLabel11.setText("TELEFONO:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, -1));
 
+        jButtonGuardar.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        jButtonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/descarga.1png.png"))); // NOI18N
         jButtonGuardar.setText("Guardar");
-        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 570, -1, -1));
+        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 520, -1, -1));
 
+        jButtonCancelar.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        jButtonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/png-transparent-computer-icons-no-symbol-cancel-8angle-rim-svg.png"))); // NOI18N
         jButtonCancelar.setText("Cancelar");
-        jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 570, -1, -1));
+        jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 520, -1, -1));
 
         javax.swing.GroupLayout jDlogRegistroPersonaLayout = new javax.swing.GroupLayout(jDlogRegistroPersona.getContentPane());
         jDlogRegistroPersona.getContentPane().setLayout(jDlogRegistroPersonaLayout);
         jDlogRegistroPersonaLayout.setHorizontalGroup(
             jDlogRegistroPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 863, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jDlogRegistroPersonaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 863, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDlogRegistroPersonaLayout.setVerticalGroup(
             jDlogRegistroPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDlogRegistroPersonaLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDlogRegistroPersonaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jLabel14.setText("jLabel14");
@@ -355,7 +352,6 @@ public class VistaPersona extends javax.swing.JInternalFrame {
         JButtonModificarPersona.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.darkGray, null, null));
 
         jLabel10.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Buscar:");
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LupaCaj.png"))); // NOI18N
@@ -426,7 +422,6 @@ public class VistaPersona extends javax.swing.JInternalFrame {
         jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 201, 42));
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("REGISTRO DE PERSONAS");
         jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, -1, -1));

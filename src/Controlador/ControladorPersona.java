@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
-
 
 import Modelo.ModeloPersona;
 import Modelo.Persona;
@@ -30,18 +24,18 @@ import javax.xml.ws.Holder;
  * @author Usuario
  */
 public class ControladorPersona {
-     private ModeloPersona modelo;
+
+    private ModeloPersona modelo;
     private VistaPersona vista;
 
     //static boolean asignar; //Esta variable es de tipo static para que funcione dentro de la expresion lambda. Esta variable sera true o false dependiendo si la persona es o no docente
-
     VistaPrincipal p = new VistaPrincipal();
-    
+
     public ControladorPersona(ModeloPersona modelo, VistaPersona vista) {
         this.modelo = modelo;
         this.vista = vista;
         vista.setVisible(true);
-        
+
         vista.setSize(p.getjDesktopPane().getWidth(), p.getjDesktopPane().getHeight());
         vista.getjDlogRegistroPersona().setResizable(true);
         cargarPersonasTabla();
@@ -65,6 +59,7 @@ public class ControladorPersona {
         vista.getjDlogRegistroPersona().setVisible(true);
 
     }
+
     private void crearEditarCurso() {
         if ("Crear nueva persona".equals(vista.getjDlogRegistroPersona().getName())) {
 
@@ -77,11 +72,10 @@ public class ControladorPersona {
                 per.setPer_direccion(vista.getTxtdireccion().getText());
 
                 java.sql.Date fechanac = new java.sql.Date(vista.getFechanacimiento().getDate().getTime());//Paso de util.Date a sql.Date
-            
-                per.setPer_fechaNac(fechanac);
-                
 
-                if (per.crearPersona()== null) {
+                per.setPer_fechaNac(fechanac);
+
+                if (per.crearPersona() == null) {
                     vista.getjDlogRegistroPersona().setVisible(false);
                     JOptionPane.showMessageDialog(vista, "Persona creada satisfactoriamente");
                     cargarPersonasTabla();
@@ -92,7 +86,6 @@ public class ControladorPersona {
 
         }
     }
-
 
     public void cargarPersonasTabla() {
         DefaultTableModel tblModel;
@@ -111,13 +104,10 @@ public class ControladorPersona {
             vista.getJTablePersonas().setValueAt(pe.getPer_fechaNac(), i.value, 3);
             vista.getJTablePersonas().setValueAt(pe.getPer_telefono(), i.value, 4);
             vista.getJTablePersonas().setValueAt(pe.getPer_direccion(), i.value, 5);
-            
 
             i.value++;
         });
     }
-
-
 
     public void cargarDatosPersonaEnTXT() {
         int fila = vista.getJTablePersonas().getSelectedRow();
@@ -161,18 +151,16 @@ public class ControladorPersona {
 
                 ModeloPersona persona = new ModeloPersona();
 
-                    vista.getTxtcedula().setText(persona.getPer_cedula());
-                    vista.getTxtnombre().setText(persona.getPer_nombre());
-                    vista.getTxtapellido().setText(persona.getPer_apellido());
-                    
-                    vista.getTxttelefono().setText(persona.getPer_telefono());
-                    vista.getTxtdireccion().setText(persona.getPer_direccion());
+                vista.getTxtcedula().setText(persona.getPer_cedula());
+                vista.getTxtnombre().setText(persona.getPer_nombre());
+                vista.getTxtapellido().setText(persona.getPer_apellido());
+
+                vista.getTxttelefono().setText(persona.getPer_telefono());
+                vista.getTxtdireccion().setText(persona.getPer_direccion());
 
                 Date fecha = vista.getFechanacimiento().getDate();
                 java.sql.Date fechaSQL = new java.sql.Date(fecha.getTime());
                 persona.setPer_fechaNac(fechaSQL);
-
-
 
                 if (persona.crearPersona() == null) {
 
@@ -204,7 +192,7 @@ public class ControladorPersona {
             Date fecha = vista.getFechanacimiento().getDate();
             java.sql.Date fechaSQL = new java.sql.Date(fecha.getTime());
             persona.setPer_fechaNac(fechaSQL);
-            
+
             if (persona.modificarPersona() == null) {
                 JOptionPane.showMessageDialog(null, "Datos modificados exitosamente");
                 vista.getjDlogRegistroPersona().setVisible(false);
@@ -275,8 +263,6 @@ public class ControladorPersona {
             }
         }
 
-
-
         if (vista.getTxtapellido().getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingrese el apellido");
             validar = false;
@@ -287,7 +273,6 @@ public class ControladorPersona {
             }
         }
 
-
         if (vista.getTxttelefono().getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingrese el numero de telefono");
             validar = false;
@@ -297,7 +282,6 @@ public class ControladorPersona {
                 validar = false;
             }
         }
-
 
         if (vista.getTxtdireccion().getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingrese la direccion");
@@ -326,13 +310,15 @@ public class ControladorPersona {
             }
         }
 
-
         return validar;
     }
-
-    
 
     public void botonCancelar() {
         vista.getjDlogRegistroPersona().setVisible(false);
     }
+
+    public void botonModificar() {
+        vista.getjDlogRegistroPersona().setVisible(false);
+    }
+
 }
