@@ -30,7 +30,7 @@ public class ModeloPersona extends Persona {
    
 
     public SQLException crearPersona() {
-        String sql = "INSERT INTO persona(per_cedula, per_nombre,per_apellido, per_fechanac, per_telefono, per_direccion) VALUES ('" + getPer_cedula() + "', '" + getPer_nombre() + "', '"  + "', '" + getPer_apellido() + "', '"  + getPer_fechaNac() + "', '" + getPer_telefono() + "', '"  + getPer_direccion() + "');";
+        String sql = "INSERT INTO persona( per_cedula, per_nombre,per_apellido, per_fechanac, per_telefono, per_direccion) VALUES ('" + getPer_cedula() + "', '" + getPer_nombre() + "', '"  + "', '" + getPer_apellido() + "', '"  + getPer_fechaNac() + "', '" + getPer_telefono() + "', '"  + getPer_direccion() + "');";
 
         return conpg.accion(sql);
     }
@@ -56,7 +56,6 @@ public class ModeloPersona extends Persona {
                 Persona persona = new Persona();
 
                 //Todo lo que haga en la sentencia define como voy a extraer los datos
-                persona.setCod_persona(rs.getInt("cod_persona"));
                 persona.setPer_cedula(rs.getString("per_cedula"));
                 persona.setPer_nombre(rs.getString("per_nombre"));
                 persona.setPer_apellido(rs.getString("per_apellido"));

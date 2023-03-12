@@ -156,10 +156,7 @@ public class ControladorPersona {
                 vista.getTxtcedula().setText(persona.getPer_cedula());
                 vista.getTxtnombre().setText(persona.getPer_nombre());
                 vista.getTxtapellido().setText(persona.getPer_apellido());
-                //vista.getFechanacimiento().set
-                Date fecha = vista.getFechanacimiento().getDate();
-                java.sql.Date fechaSQL = new java.sql.Date(fecha.getTime());
-                persona.setPer_fechaNac(fechaSQL);
+                vista.getFechanacimiento().setDate(persona.getPer_fechaNac());
                 vista.getTxttelefono().setText(persona.getPer_telefono());
                 vista.getTxtdireccion().setText(persona.getPer_direccion());
 
