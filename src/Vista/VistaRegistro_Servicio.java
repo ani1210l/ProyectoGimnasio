@@ -26,6 +26,7 @@ public class VistaRegistro_Servicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialogRegistroServicio = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -39,6 +40,17 @@ public class VistaRegistro_Servicio extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblClientes = new javax.swing.JTable();
+
+        javax.swing.GroupLayout jDialogRegistroServicioLayout = new javax.swing.GroupLayout(jDialogRegistroServicio.getContentPane());
+        jDialogRegistroServicio.getContentPane().setLayout(jDialogRegistroServicioLayout);
+        jDialogRegistroServicioLayout.setHorizontalGroup(
+            jDialogRegistroServicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 760, Short.MAX_VALUE)
+        );
+        jDialogRegistroServicioLayout.setVerticalGroup(
+            jDialogRegistroServicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 497, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -221,6 +233,7 @@ public class VistaRegistro_Servicio extends javax.swing.JFrame {
     private javax.swing.JButton btnActualizarcli;
     private javax.swing.JButton btnCrearcliente;
     private javax.swing.JButton btnModificarcli;
+    private javax.swing.JDialog jDialogRegistroServicio;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;

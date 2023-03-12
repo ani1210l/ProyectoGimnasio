@@ -5,11 +5,11 @@
  */
 package Controlador;
 
-import Modelo.Empleado;
-import Modelo.ModeloEmpleado;
+
 import Modelo.ModeloPersona;
 import Modelo.Persona;
 import Vista.VistaPersona;
+import Vista.VistaPrincipal;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.text.ParseException;
@@ -33,36 +33,40 @@ public class ControladorPersona {
      private ModeloPersona modelo;
     private VistaPersona vista;
 
-    static boolean asignar; //Esta variable es de tipo static para que funcione dentro de la expresion lambda. Esta variable sera true o false dependiendo si la persona es o no docente
+    //static boolean asignar; //Esta variable es de tipo static para que funcione dentro de la expresion lambda. Esta variable sera true o false dependiendo si la persona es o no docente
 
-
+    VistaPrincipal p = new VistaPrincipal();
+    
     public ControladorPersona(ModeloPersona modelo, VistaPersona vista) {
         this.modelo = modelo;
         this.vista = vista;
         vista.setVisible(true);
-
+        
+        vista.setSize(p.getjDesktopPane().getWidth(), p.getjDesktopPane().getHeight());
+        vista.getjDlogRegistroPersona().setResizable(true);
         cargarPersonasTabla();
+
     }
 
     public void iniciarControl() {
-        vista.getBtnCrear().addActionListener(l -> abrirDlgPersonas());
-        vista.getBtnActualizar().addActionListener(l -> cargarPersonasTabla());
-        vista.getBtnModificar().addActionListener(l -> cargarDatosPersonaEnTXT());
-        vista.getBtnCancelar().addActionListener(l -> botonCancelar());
+        vista.getJButtonCrearPersona().addActionListener(l -> abrirDlgPersonas());
+        vista.getJButtonAcuatlizarPersona().addActionListener(l -> cargarPersonasTabla());
+        vista.getJButtonModificarPersona().addActionListener(l -> cargarDatosPersonaEnTXT());
+        vista.getJButtonEliminarPersona().addActionListener(l -> botonCancelar());
         buscarPersona();
     }
 
     public void abrirDlgPersonas() {
 
-        vista.getjDlogRegistro().setName("Crear nueva persona");
-        vista.getjDlogRegistro().setLocationRelativeTo(vista);
-        vista.getjDlogRegistro().setSize(802, 622);
-        vista.getjDlogRegistro().setTitle("Crear nueva persona");
-        vista.getjDlogRegistro().setVisible(true);
+        vista.getjDlogRegistroPersona().setName("Crear nueva persona");
+        vista.getjDlogRegistroPersona().setLocationRelativeTo(vista);
+        vista.getjDlogRegistroPersona().setSize(802, 622);
+        vista.getjDlogRegistroPersona().setTitle("Crear nueva persona");
+        vista.getjDlogRegistroPersona().setVisible(true);
 
     }
     private void crearEditarCurso() {
-        if ("Crear nueva persona".equals(vista.getjDlogRegistro().getName())) {
+        if ("Crear nueva persona".equals(vista.getjDlogRegistroPersona().getName())) {
 
             //INSERTAR
             if (validarDatosPersona()) {
@@ -78,7 +82,7 @@ public class ControladorPersona {
                 
 
                 if (per.crearPersona()== null) {
-                    vista.getjDlogRegistro().setVisible(false);
+                    vista.getjDlogRegistroPersona().setVisible(false);
                     JOptionPane.showMessageDialog(vista, "Persona creada satisfactoriamente");
                     cargarPersonasTabla();
                 } else {
@@ -92,7 +96,7 @@ public class ControladorPersona {
 
     public void cargarPersonasTabla() {
         DefaultTableModel tblModel;
-        tblModel = (DefaultTableModel) vista.getTblPersona().getModel();
+        tblModel = (DefaultTableModel) vista.getJTablePersonas().getModel();
         tblModel.setNumRows(0);//limpio filas de la tabla.
 
         List<Persona> listap = modelo.listaPersonasTabla();//Enlazo al Modelo y obtengo los datos
@@ -101,11 +105,13 @@ public class ControladorPersona {
         listap.stream().forEach(pe -> {
 
             tblModel.addRow(new Object[9]);//Creo una fila vacia
-            vista.getTblPersona().setValueAt(pe.getPer_cedula(), i.value, 0);
-            vista.getTblPersona().setValueAt(pe.getPer_nombre(), i.value, 1);
-            vista.getTblPersona().setValueAt(pe.getPer_apellido(), i.value, 2);
-            vista.getTblPersona().setValueAt(pe.getPer_telefono(), i.value, 3);
-            vista.getTblPersona().setValueAt(pe.getPer_direccion(), i.value, 4);
+            vista.getJTablePersonas().setValueAt(pe.getPer_cedula(), i.value, 0);
+            vista.getJTablePersonas().setValueAt(pe.getPer_nombre(), i.value, 1);
+            vista.getJTablePersonas().setValueAt(pe.getPer_apellido(), i.value, 2);
+            vista.getJTablePersonas().setValueAt(pe.getPer_fechaNac(), i.value, 3);
+            vista.getJTablePersonas().setValueAt(pe.getPer_telefono(), i.value, 4);
+            vista.getJTablePersonas().setValueAt(pe.getPer_direccion(), i.value, 5);
+            
 
             i.value++;
         });
@@ -114,25 +120,25 @@ public class ControladorPersona {
 
 
     public void cargarDatosPersonaEnTXT() {
-        int fila = vista.getTblPersona().getSelectedRow();
+        int fila = vista.getJTablePersonas().getSelectedRow();
 
         if (fila == -1) {
             JOptionPane.showMessageDialog(null, "Aun no ha seleccionado una fila");
         } else {
 
             //Abrir jDialog de campos de Docente
-            vista.getjDlogRegistro().setName("Modificar persona");
-            vista.getjDlogRegistro().setLocationRelativeTo(null);
-            vista.getjDlogRegistro().setSize(802, 622);
-            vista.getjDlogRegistro().setTitle("Modificar  persona");
-            vista.getjDlogRegistro().setVisible(true);
+            vista.getjDlogRegistroPersona().setName("Modificar persona");
+            vista.getjDlogRegistroPersona().setLocationRelativeTo(null);
+            vista.getjDlogRegistroPersona().setSize(802, 622);
+            vista.getjDlogRegistroPersona().setTitle("Modificar  persona");
+            vista.getjDlogRegistroPersona().setVisible(true);
 
             //ModeloPersona modeloPersona = new ModeloPersona();
             List<Persona> listap = modelo.listaPersonasTabla();
 
             listap.stream().forEach(persona -> {
 
-                if (persona.getPer_cedula().equals(vista.getTblPersona().getValueAt(fila, 0).toString())) {
+                if (persona.getPer_cedula().equals(vista.getJTablePersonas().getValueAt(fila, 0).toString())) {
                     vista.getTxtcedula().setText(persona.getPer_cedula());
                     vista.getTxtnombre().setText(persona.getPer_nombre());
                     vista.getTxtapellido().setText(persona.getPer_apellido());
@@ -201,7 +207,7 @@ public class ControladorPersona {
             
             if (persona.modificarPersona() == null) {
                 JOptionPane.showMessageDialog(null, "Datos modificados exitosamente");
-                vista.getjDlogRegistro().setVisible(false);
+                vista.getjDlogRegistroPersona().setVisible(false);
                 cargarPersonasTabla();
             } else {
                 JOptionPane.showMessageDialog(null, "No fue posible modificar los datos");
@@ -227,27 +233,27 @@ public class ControladorPersona {
             public void keyReleased(KeyEvent e) {
 
                 DefaultTableModel tblModel;
-                tblModel = (DefaultTableModel) vista.getTblPersona().getModel();
+                tblModel = (DefaultTableModel) vista.getJTablePersonas().getModel();
                 tblModel.setNumRows(0);//limpio filas de la tabla.
 
-                List<Persona> listap = modelo.buscarPersona(vista.getTxtBuscar().getText());//Enlazo al Modelo y obtengo los datos
+                List<Persona> listap = modelo.buscarPersona(vista.getJTextFieldBuscarPersona().getText());//Enlazo al Modelo y obtengo los datos
                 Holder<Integer> i = new Holder<>(0);//Contador para las filas. 'i' funciona dentro de una expresion lambda
 
                 listap.stream().forEach(pe -> {
 
                     tblModel.addRow(new Object[9]);
-                    vista.getTblPersona().setValueAt(pe.getPer_cedula(), i.value, 0);
-                    vista.getTblPersona().setValueAt(pe.getPer_nombre(), i.value, 1);
-                    vista.getTblPersona().setValueAt(pe.getPer_apellido(), i.value, 2);
-                    vista.getTblPersona().setValueAt(pe.getPer_telefono(), i.value, 3);
-                    vista.getTblPersona().setValueAt(pe.getPer_direccion(), i.value, 4);
+                    vista.getJTablePersonas().setValueAt(pe.getPer_cedula(), i.value, 0);
+                    vista.getJTablePersonas().setValueAt(pe.getPer_nombre(), i.value, 1);
+                    vista.getJTablePersonas().setValueAt(pe.getPer_apellido(), i.value, 2);
+                    vista.getJTablePersonas().setValueAt(pe.getPer_telefono(), i.value, 3);
+                    vista.getJTablePersonas().setValueAt(pe.getPer_direccion(), i.value, 4);
 
                     i.value++;
                 });
             }
         };
 
-        vista.getTxtBuscar().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener 
+        vista.getJTextFieldBuscarPersona().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener 
     }
 
     public boolean validarDatosPersona() {
@@ -327,6 +333,6 @@ public class ControladorPersona {
     
 
     public void botonCancelar() {
-        vista.getjDlogRegistro().setVisible(false);
+        vista.getjDlogRegistroPersona().setVisible(false);
     }
 }

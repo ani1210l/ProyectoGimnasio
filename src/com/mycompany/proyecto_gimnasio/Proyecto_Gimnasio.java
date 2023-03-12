@@ -1,11 +1,10 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package com.mycompany.proyecto_gimnasio;
 
-import Controlador.ControladorMenu;
-import Vista.Menu;
+import Controlador.ControladorPrincipal;
+import Vista.VistaPrincipal;
 
 /**
  *
@@ -14,8 +13,8 @@ import Vista.Menu;
 public class Proyecto_Gimnasio {
 
     public static void main(String[] args) {
-        Menu vistaLogin = new Menu();
-        ControladorMenu control = new ControladorMenu(vistaLogin);
+        VistaPrincipal vistaMenu = new VistaPrincipal();
+        ControladorPrincipal control = new ControladorPrincipal(vistaMenu);
         control.iniciaControl();
     }
 }
