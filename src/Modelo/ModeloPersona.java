@@ -30,7 +30,7 @@ public class ModeloPersona extends Persona {
    
 
     public SQLException crearPersona() {
-        String sql = "INSERT INTO persona( per_cedula, per_nombre,per_apellido, per_fechanac, per_telefono, per_direccion) VALUES ('" + getPer_cedula() + "', '" + getPer_nombre() + "', '"  + "', '" + getPer_apellido() + "', '"  + getPer_fechaNac() + "', '" + getPer_telefono() + "', '"  + getPer_direccion() + "');";
+        String sql = "INSERT INTO persona( per_cedula, per_nombre,per_apellido, per_fechanac, per_telefono, per_direccion) VALUES ('" + getPer_cedula() + "', '" + getPer_nombre() + "', '" + getPer_apellido() + "', '"  + getPer_fechaNac() + "', '" + getPer_telefono() + "', '"  + getPer_direccion() + "');";
 
         return conpg.accion(sql);
     }

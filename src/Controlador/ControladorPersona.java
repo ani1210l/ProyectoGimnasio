@@ -156,7 +156,9 @@ public class ControladorPersona {
                 vista.getTxtcedula().setText(persona.getPer_cedula());
                 vista.getTxtnombre().setText(persona.getPer_nombre());
                 vista.getTxtapellido().setText(persona.getPer_apellido());
-                vista.getFechanacimiento().setDate(persona.getPer_fechaNac());
+                Date fecha = vista.getFechanacimiento().getDate();
+                java.sql.Date fechaSQL = new java.sql.Date(fecha.getDate());
+                persona.setPer_fechaNac(fechaSQL);
                 vista.getTxttelefono().setText(persona.getPer_telefono());
                 vista.getTxtdireccion().setText(persona.getPer_direccion());
 
@@ -184,12 +186,13 @@ public class ControladorPersona {
             persona.setPer_cedula(vista.getTxtcedula().getText());
             persona.setPer_nombre(vista.getTxtnombre().getText());
             persona.setPer_apellido(vista.getTxtapellido().getText());
-            persona.setPer_telefono(vista.getTxttelefono().getText());
-            persona.setPer_direccion(vista.getTxtdireccion().getText());
 
             Date fecha = vista.getFechanacimiento().getDate();
             java.sql.Date fechaSQL = new java.sql.Date(fecha.getTime());
             persona.setPer_fechaNac(fechaSQL);
+
+            persona.setPer_telefono(vista.getTxttelefono().getText());
+            persona.setPer_direccion(vista.getTxtdireccion().getText());
 
             if (persona.modificarPersona() == null) {
                 JOptionPane.showMessageDialog(null, "Datos modificados exitosamente");
@@ -201,6 +204,8 @@ public class ControladorPersona {
         }
     }
 
+//else hacemos el editar
+    //EDITAR
     public void buscarPersona() {
 
         KeyListener eventoTeclado = new KeyListener() {//Crear un objeto de tipo keyListener(Es una interface) por lo tanto se debe implementar sus metodos abstractos

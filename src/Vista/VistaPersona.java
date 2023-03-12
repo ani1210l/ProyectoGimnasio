@@ -136,13 +136,6 @@ public class VistaPersona extends javax.swing.JInternalFrame {
         this.txtcedula = txtcedula;
     }
 
-    public JTextField getTxtcodcli() {
-        return txtcodcli;
-    }
-
-    public void setTxtcodcli(JTextField txtcodcli) {
-        this.txtcodcli = txtcodcli;
-    }
 
     public JTextField getTxtdireccion() {
         return txtdireccion;
