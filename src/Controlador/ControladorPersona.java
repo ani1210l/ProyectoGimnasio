@@ -153,14 +153,15 @@ public class ControladorPersona {
 
                 ModeloPersona persona = new ModeloPersona();
 
-                vista.getTxtcedula().setText(persona.getPer_cedula());
-                vista.getTxtnombre().setText(persona.getPer_nombre());
-                vista.getTxtapellido().setText(persona.getPer_apellido());
+                //vista.getTxtcedula().setText(persona.getPer_cedula());
+                persona.setPer_cedula(vista.getTxtcedula().getText());
+                persona.setPer_nombre(vista.getTxtnombre().getText());
+                persona.setPer_apellido(vista.getTxtapellido().getText());
                 Date fecha = vista.getFechanacimiento().getDate();
                 java.sql.Date fechaSQL = new java.sql.Date(fecha.getDate());
                 persona.setPer_fechaNac(fechaSQL);
-                vista.getTxttelefono().setText(persona.getPer_telefono());
-                vista.getTxtdireccion().setText(persona.getPer_direccion());
+                persona.setPer_telefono(vista.getTxttelefono().getText());
+                persona.setPer_direccion(vista.getTxtdireccion().getText());
 
                 if (persona.crearPersona() == null) {
                     JOptionPane.showMessageDialog(null, "Persona creada");
