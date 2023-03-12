@@ -164,7 +164,7 @@ public class ControladorPersona {
 
                 if (persona.crearPersona() == null) {
                     JOptionPane.showMessageDialog(null, "Persona creada");
-// System.out.println("Persona creada satisfactoriamente");
+                    // System.out.println("Persona creada satisfactoriamente");
                     crearPersona = true;
                 } else {
                     System.out.println("La persona NO se pudo crear");
