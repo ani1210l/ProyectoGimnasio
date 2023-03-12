@@ -43,18 +43,20 @@ public class ControladorPersona {
     }
 
     public void iniciarControl() {
+        vista.getjDlogRegistroPersona().setSize(875, 623);
+
         vista.getJButtonCrearPersona().addActionListener(l -> abrirDlgPersonas());
         vista.getJButtonAcuatlizarPersona().addActionListener(l -> cargarPersonasTabla());
         vista.getJButtonModificarPersona().addActionListener(l -> cargarDatosPersonaEnTXT());
-        vista.getJButtonEliminarPersona().addActionListener(l -> botonCancelar());
+        vista.getjButtonCancelar().addActionListener(l -> botonCancelar());
+        vista.getjButtonGuardar().addActionListener(l-> crearPersona());
         buscarPersona();
     }
 
     public void abrirDlgPersonas() {
 
         vista.getjDlogRegistroPersona().setName("Crear nueva persona");
-        vista.getjDlogRegistroPersona().setLocationRelativeTo(vista);
-        vista.getjDlogRegistroPersona().setSize(802, 622);
+        vista.getjDlogRegistroPersona().setSize(875, 623);
         vista.getjDlogRegistroPersona().setTitle("Crear nueva persona");
         vista.getjDlogRegistroPersona().setVisible(true);
 
@@ -154,13 +156,12 @@ public class ControladorPersona {
                 vista.getTxtcedula().setText(persona.getPer_cedula());
                 vista.getTxtnombre().setText(persona.getPer_nombre());
                 vista.getTxtapellido().setText(persona.getPer_apellido());
-
-                vista.getTxttelefono().setText(persona.getPer_telefono());
-                vista.getTxtdireccion().setText(persona.getPer_direccion());
-
+                //vista.getFechanacimiento().set
                 Date fecha = vista.getFechanacimiento().getDate();
                 java.sql.Date fechaSQL = new java.sql.Date(fecha.getTime());
                 persona.setPer_fechaNac(fechaSQL);
+                vista.getTxttelefono().setText(persona.getPer_telefono());
+                vista.getTxtdireccion().setText(persona.getPer_direccion());
 
                 if (persona.crearPersona() == null) {
 
@@ -314,10 +315,6 @@ public class ControladorPersona {
     }
 
     public void botonCancelar() {
-        vista.getjDlogRegistroPersona().setVisible(false);
-    }
-
-    public void botonModificar() {
         vista.getjDlogRegistroPersona().setVisible(false);
     }
 
