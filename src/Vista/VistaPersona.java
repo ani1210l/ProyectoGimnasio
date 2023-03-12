@@ -80,21 +80,6 @@ public class VistaPersona extends javax.swing.JInternalFrame {
         this.JTextFieldBuscarPersona = JTextFieldBuscarPersona;
     }
 
-    public JButton getBtnCancelar() {
-        return btnCancelar;
-    }
-
-    public void setBtnCancelar(JButton btnCancelar) {
-        this.btnCancelar = btnCancelar;
-    }
-
-    public JButton getBtnGuardar() {
-        return btnGuardar;
-    }
-
-    public void setBtnGuardar(JButton btnGuardar) {
-        this.btnGuardar = btnGuardar;
-    }
 
     public JDateChooser getFechanacimiento() {
         return fechanacimiento;
@@ -184,6 +169,24 @@ public class VistaPersona extends javax.swing.JInternalFrame {
         this.txttelefono = txttelefono;
     }
 
+    public JButton getjButtonCancelar() {
+        return jButtonCancelar;
+    }
+
+    public void setjButtonCancelar(JButton jButtonCancelar) {
+        this.jButtonCancelar = jButtonCancelar;
+    }
+
+    public JButton getjButtonGuardar() {
+        return jButtonGuardar;
+    }
+
+    public void setjButtonGuardar(JButton jButtonGuardar) {
+        this.jButtonGuardar = jButtonGuardar;
+    }
+    
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -214,10 +217,10 @@ public class VistaPersona extends javax.swing.JInternalFrame {
         txtnombre = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtbuscar = new javax.swing.JTextField();
-        btnGuardar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
         txttelefono = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        jButtonGuardar = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         JButtonCrearPersona = new javax.swing.JButton();
@@ -301,18 +304,18 @@ public class VistaPersona extends javax.swing.JInternalFrame {
         jLabel7.setToolTipText("");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
         jPanel1.add(txtbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 280, 30));
-
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-actualizar.png"))); // NOI18N
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 570, -1, 20));
-
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-delete.png"))); // NOI18N
-        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 570, -1, 20));
         jPanel1.add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 240, -1));
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("TELEFONO:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, -1));
+
+        jButtonGuardar.setText("Guardar");
+        jPanel1.add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 570, -1, -1));
+
+        jButtonCancelar.setText("Cancelar");
+        jPanel1.add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 570, -1, -1));
 
         javax.swing.GroupLayout jDlogRegistroPersonaLayout = new javax.swing.GroupLayout(jDlogRegistroPersona.getContentPane());
         jDlogRegistroPersona.getContentPane().setLayout(jDlogRegistroPersonaLayout);
@@ -466,9 +469,9 @@ public class VistaPersona extends javax.swing.JInternalFrame {
     private javax.swing.JButton JButtonModificarPersona;
     private javax.swing.JTable JTablePersonas;
     private javax.swing.JTextField JTextFieldBuscarPersona;
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnGuardar;
     private com.toedter.calendar.JDateChooser fechanacimiento;
+    private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonGuardar;
     private javax.swing.JDialog jDlogRegistroPersona;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
