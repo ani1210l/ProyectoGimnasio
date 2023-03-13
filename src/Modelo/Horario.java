@@ -14,6 +14,9 @@ public class Horario {
      String jornada;
      boolean estado;
 
+    public Horario() {
+    }
+
     public Horario(int horario_codigo, String jornada, boolean estado) {
         this.horario_codigo = horario_codigo;
         this.jornada = jornada;
