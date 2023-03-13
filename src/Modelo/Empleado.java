@@ -65,6 +65,7 @@ public class Empleado extends Persona{
         this.emp_codper = emp_codper;
     }
 
+
    
     
     

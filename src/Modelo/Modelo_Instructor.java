@@ -32,13 +32,13 @@ public class Modelo_Instructor extends Instructor {
     }
 
     public SQLException CrearInstructor() {
-        String sql = "INSERT INTO Instructor (ins_codigo, ins_areatrabajo, descripcion, ins_codemp) VALUES ('" + getIns_codigo() + "','" + getIns_areatrabajo() + "','" + getDescripcion() + "," + getIns_codemp() + "')";
+        String sql = "INSERT INTO instructor (ins_codigo, ins_areatrabajo, descripcion, ins_codemp) VALUES ('" + getIns_codigo() + "','" + getIns_areatrabajo() + "','" + getDescripcion() + "," + getIns_codemp() + "')";
 
         return conpg.accion(sql);
     }
 
     public SQLException modificarInstructor() {
-        String sql = "UPDATE Instructor SET ins_codigo = '" + getIns_codigo() + "'WHERE  ins_codigo = '" + getIns_codemp() + "';";
+        String sql = "UPDATE instructor SET ins_codigo = '" + getIns_codigo() + "'WHERE  ins_codigo = '" + getIns_codemp() + "';";
         return conpg.accion(sql);
     }
 
@@ -47,7 +47,7 @@ public class Modelo_Instructor extends Instructor {
             //Me retorna un "List" de "persona"
             List<Instructor> lista = new ArrayList<>();
 
-            String sql = "select * from cliente";
+            String sql = "select * from instructor";
 
             ResultSet rs = conpg.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
@@ -56,9 +56,9 @@ public class Modelo_Instructor extends Instructor {
                 // crear las instancias
 
                 Instructor instructor = new Instructor();
-                instructor.setIns_codigo(rs.getInt("Cod_Instructor"));
-                instructor.setIns_areatrabajo(rs.getString("Area de trabajo"));
-                instructor.setDescripcion(rs.getString("Descripcion"));
+                instructor.setIns_codigo(rs.getInt("ins_codigo"));
+                instructor.setIns_areatrabajo(rs.getString("ins_areatrabajo"));
+                instructor.setDescripcion(rs.getString("descripcion"));
                 instructor.setIns_codemp(rs.getInt("ins_codemp"));
 
                 lista.add(instructor);
@@ -79,9 +79,9 @@ public class Modelo_Instructor extends Instructor {
             while (rs.next()) {
                 Instructor instructor = new Instructor();
 
-                instructor.setIns_codigo(rs.getInt("Ins_codigo"));
-                instructor.setIns_areatrabajo(rs.getNString("Ins_areatrabajo"));
-                instructor.setDescripcion(rs.getNString("Descripcion"));
+                instructor.setIns_codigo(rs.getInt("ins_codigo"));
+                instructor.setIns_areatrabajo(rs.getString("ins_areatrabajo"));
+                instructor.setDescripcion(rs.getString("descripcion"));
                 instructor.setIns_codemp(rs.getInt("ins_codemp"));
 
             }
@@ -97,7 +97,7 @@ public class Modelo_Instructor extends Instructor {
         int codigo = 0;
         try {
 
-            String sql = "select ins_cod from  Instructor where ins_codemp = '" + getIns_codemp() + "'";
+            String sql = "select ins_cod from  instructor where ins_codemp = '" + getIns_codemp() + "'";
 
             ResultSet rs = conpg.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
@@ -122,7 +122,7 @@ public class Modelo_Instructor extends Instructor {
         int cantidad = 0;
         try {
 
-            String sql = "select COUNT(*) from cliente where ins_codemp='" + ins_codemp + "'";
+            String sql = "select COUNT(*) from instructor where ins_codemp='" + ins_codemp + "'";
 
             ResultSet rs = conpg.consulta(sql); //La consulta nos devuelve un "ResultSet"
 

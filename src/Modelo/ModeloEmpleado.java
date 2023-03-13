@@ -34,17 +34,57 @@ public class ModeloEmpleado extends Empleado {
 
 
     public SQLException crearEmpleado() {
-        String sql = "INSERT INTO EMPLEADO(EMP_CODIGO, EMP_CODPER,EMP_SALARIO,EMP_HORARIO) VALUES ('" + getEmpleado_codigo() + "', '" + getEmp_codper()+ "', '"  + "', '" + getSalario_emp() + "', '"  + getHorario_codigo() + "');";
+        String sql = "INSERT INTO empleado(emp_codigo, emp_codper,emp_salario,emp_horario) VALUES ('" + getEmpleado_codigo() + "', '" + getEmp_codper()+ "', '"  + "', '" + getSalario_emp() + "', '"  + getHorario_codigo() + "');";
 
         return conpg.accion(sql);
     }
 
     public SQLException modificarEmpleado() {
-        String sql = "UPDATE empleado SET EMP_CODIGO= '"+getEmpleado_codigo()+"', EMP_CODPER='"+getEmp_codper()+"', EMP_SALARIO='"+getSalario_emp()+"', EMP_HORARIO='"+getHorario_codigo() + "');";
+        String sql = "UPDATE empleado SET emp_codigo= '"+getEmpleado_codigo()+"', emp_codper='"+getEmp_codper()+"', emp_salario='"+getSalario_emp()+"', emp_horario='"+getHorario_codigo() + "');";
 
         return conpg.accion(sql);
     }
 
+    public SQLException eliminarEmpleado(int Empleado_codigo) { //elimina 
+
+        String sql = "DELETE FROM empleado WHERE emp_codigo = '" + Empleado_codigo + "';";
+
+        return conpg.accion(sql);
+    }
+    
+     public List<Empleado> listaEmpleado() {
+        try {
+            //Me retorna un "List" de "persona"
+            List<Empleado> listaEmpleado = new ArrayList<>();
+
+            String sql = "select emp_codigo,emp_codper,emp_salario,emp_horario from empleado";
+
+            ResultSet rs = conpg.consulta(sql); //La consulta nos devuelve un "ResultSet"
+
+            //Pasar de "ResultSet" a "List"
+            while (rs.next()) {
+                //Crear las instancias de las personas
+                Empleado empleado = new Empleado();
+
+                //Todo lo que haga en la sentencia define como voy a extraer los datos
+                empleado.setEmpleado_codigo(rs.getInt("emp_codigo"));
+                empleado.setEmp_codper(rs.getInt("emp_codper"));
+                empleado.setSalario_emp(rs.getDouble("emp_salario"));
+                empleado.setHorario_codigo(rs.getInt("emp_horario"));
+
+                listaEmpleado.add(empleado);
+            }
+
+            rs.close();
+            return listaEmpleado;
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ModeloPersona.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    
+    
     public List<Empleado> listaEmpleadosTabla() {
         try {
             //Me retorna un "List" de "empleado"
@@ -63,7 +103,7 @@ public class ModeloEmpleado extends Empleado {
                 empleado.setEmpleado_codigo(rs.getInt("emp_codigo"));
                 empleado.setEmp_codper(rs.getInt("emp_codper"));
                 empleado.setSalario_emp(rs.getDouble("emp_salario"));
-                empleado.setHorario_codigo(rs.getInt("emp_emp"));
+                empleado.setHorario_codigo(rs.getInt("emp_horario"));
                 
 
                 listaEmpleado.add(empleado); //Agrego los datos a la lista
@@ -80,7 +120,7 @@ public class ModeloEmpleado extends Empleado {
         }
     }
 
-    public List<Empleado> buscarEmpleado(int empleado_codigo) {
+    public List<Empleado> buscarEmpleado(String empleado_codigo) {
         try {
 
             List<Empleado> listaEmpleadoBs = new ArrayList<>();
@@ -114,7 +154,7 @@ public class ModeloEmpleado extends Empleado {
         }
     }
 
-    public int traerCodigoDeEmpleadoCrear(String cedula) {
+    public int traerCodigoDeEmpleadoCrear(String getEmp_codper) {
         int codigo = 0;
         try {
 
@@ -162,4 +202,6 @@ public class ModeloEmpleado extends Empleado {
 
         return cantidadEmpleado;
     }
+
+    
 }
