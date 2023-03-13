@@ -245,7 +245,6 @@ public class ControladorEmpleado {
 ////        }
 ////
 ////    }
-
     public void modificarEmpleado() {
 //
 //        int seleccion = vista.getTblEmpleado().getSelectedRow();
@@ -308,10 +307,8 @@ public class ControladorEmpleado {
                 tblModel = (DefaultTableModel) vista.getTblEmpleado().getModel();
                 tblModel.setNumRows(0);//limpio filas de la tabla.
 
-                
                 List<Empleado> listaEm = modelo.buscarEmpleado(vista.getTxtBuscar().getText());//Enlazo al Modelo y obtengo los datos
                 Holder<Integer> i = new Holder<>(0);//contador para el no. fila
-
 
                 listaEm.stream().forEach(pe -> {
 
@@ -321,6 +318,11 @@ public class ControladorEmpleado {
                     vista.getTblEmpleado().setValueAt(pe.getPer_apellido(), i.value, 2);
                     vista.getTblEmpleado().setValueAt(pe.getPer_telefono(), i.value, 3);
                     vista.getTblEmpleado().setValueAt(pe.getPer_direccion(), i.value, 4);
+                    vista.getTblEmpleado().setValueAt(pe.getEmpleado_codigo(), i.value, 5);
+
+                    vista.getTblEmpleado().setValueAt(pe.getEmp_codper(), i.value, 6);
+                    vista.getTblEmpleado().setValueAt(pe.getHorario_codigo(), i.value, 7);
+                    vista.getTblEmpleado().setValueAt(pe.getSalario_emp(), i.value, 8);
 
                     i.value++;
                 });

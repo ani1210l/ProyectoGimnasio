@@ -71,7 +71,7 @@ public class Modelo_Instructor extends Instructor {
         }
     }
 
-    public List<Instructor> BuscarInstructor(int ins_codemp) {
+    public List<Instructor> BuscarInstructor(String ins_codemp) {
         try {
             List<Instructor> lista = new ArrayList<>();
             String sql = "Select * from instructor where ins_codemp '" + ins_codemp + "%'";

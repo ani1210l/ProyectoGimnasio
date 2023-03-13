@@ -43,18 +43,6 @@ public class VistaInstructor extends javax.swing.JFrame {
         txtsalario = new javax.swing.JTextField();
         txtcodempleado = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtdireccion = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtcedula = new javax.swing.JTextField();
-        txtnombre = new javax.swing.JTextField();
-        txtapellido = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jFecha = new com.toedter.calendar.JDateChooser();
-        jLabel8 = new javax.swing.JLabel();
-        txttelefono = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -64,12 +52,14 @@ public class VistaInstructor extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         txtdescripcion = new javax.swing.JTextField();
         txtcodigoHorario = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        txtinstruccodPersona = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        txtBuscar = new javax.swing.JTextField();
+        Buscar = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         btnCrear = new javax.swing.JButton();
@@ -98,24 +88,6 @@ public class VistaInstructor extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel9.setText("Codigo Empleado:");
 
-        jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
-        jLabel7.setText("Dirección:");
-
-        jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
-        jLabel6.setText("Apellido:");
-
-        jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
-        jLabel4.setText("Nombre:");
-
-        jLabel3.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
-        jLabel3.setText("Cedula:");
-
-        jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
-        jLabel5.setText("Fecha de nacimiento:");
-
-        jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
-        jLabel8.setText("Telefono:");
-
         jLabel2.setFont(new java.awt.Font("Roboto Black", 0, 21)); // NOI18N
         jLabel2.setText("Registro Instructor");
 
@@ -130,6 +102,9 @@ public class VistaInstructor extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
         jLabel19.setText("Descripción:");
 
+        jLabel20.setFont(new java.awt.Font("Roboto Medium", 0, 16)); // NOI18N
+        jLabel20.setText("Codigo Persona:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -143,45 +118,6 @@ public class VistaInstructor extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel4)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addGap(37, 37, 37)
-                                .addComponent(txtsalario, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(21, 21, 21)
-                                .addComponent(txtcodempleado, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(18, 18, 18))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addComponent(jLabel13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtcodigoHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -200,7 +136,27 @@ public class VistaInstructor extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel19)
                             .addComponent(txtdescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(76, 76, 76))))
+                        .addGap(76, 76, 76))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addGap(33, 33, 33)
+                                .addComponent(txtinstruccodPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel11)
+                                    .addGap(37, 37, 37)
+                                    .addComponent(txtsalario, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel9)
+                                    .addGap(21, 21, 21)
+                                    .addComponent(txtcodempleado, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addComponent(txtcodigoHorario, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,33 +165,11 @@ public class VistaInstructor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
-                .addGap(41, 41, 41)
+                .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtcedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel20)
+                    .addComponent(txtinstruccodPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5)
-                            .addComponent(jFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txttelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(txtcodempleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,7 +193,7 @@ public class VistaInstructor extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(txtdescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptar)
                     .addComponent(btnCancelar))
@@ -358,7 +292,7 @@ public class VistaInstructor extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -379,7 +313,7 @@ public class VistaInstructor extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17))
                         .addGap(27, 27, 27))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
@@ -471,6 +405,7 @@ public class VistaInstructor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Buscar;
     private javax.swing.JTable TblaInstructor;
     private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnActualizar;
@@ -479,7 +414,6 @@ public class VistaInstructor extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JDialog jDialoInstructor;
-    private com.toedter.calendar.JDateChooser jFecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -492,30 +426,44 @@ public class VistaInstructor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txtBuscar;
-    private javax.swing.JTextField txtapellido;
     private javax.swing.JTextField txtareatrabajo;
-    private javax.swing.JTextField txtcedula;
     private javax.swing.JTextField txtcodempleado;
     private javax.swing.JTextField txtcodigoHorario;
     private javax.swing.JTextField txtcodinstructor;
     private javax.swing.JTextField txtdescripcion;
-    private javax.swing.JTextField txtdireccion;
-    private javax.swing.JTextField txtnombre;
+    private javax.swing.JTextField txtinstruccodPersona;
     private javax.swing.JTextField txtsalario;
-    private javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
+
+    public JTextField getBuscar() {
+        return Buscar;
+    }
+
+    public void setBuscar(JTextField Buscar) {
+        this.Buscar = Buscar;
+    }
+
+    public JTable getTblaInstructor() {
+        return TblaInstructor;
+    }
+
+    public void setTblaInstructor(JTable TblaInstructor) {
+        this.TblaInstructor = TblaInstructor;
+    }
+
+    public JButton getBtnAceptar() {
+        return btnAceptar;
+    }
+
+    public void setBtnAceptar(JButton btnAceptar) {
+        this.btnAceptar = btnAceptar;
+    }
 
     public JButton getBtnActualizar() {
         return btnActualizar;
@@ -523,6 +471,14 @@ public class VistaInstructor extends javax.swing.JFrame {
 
     public void setBtnActualizar(JButton btnActualizar) {
         this.btnActualizar = btnActualizar;
+    }
+
+    public JButton getBtnCancelar() {
+        return btnCancelar;
+    }
+
+    public void setBtnCancelar(JButton btnCancelar) {
+        this.btnCancelar = btnCancelar;
     }
 
     public JButton getBtnCrear() {
@@ -549,45 +505,12 @@ public class VistaInstructor extends javax.swing.JFrame {
         this.btnModificar = btnModificar;
     }
 
-    public JDateChooser getjFecha() {
-        return jFecha;
+    public JDialog getjDialoInstructor() {
+        return jDialoInstructor;
     }
 
-    public void setjFecha(JDateChooser jFecha) {
-        this.jFecha = jFecha;
-    }
-
-    public JTable getTblaInstructor() {
-        return TblaInstructor;
-    }
-
-    public void setTblaInstructor(JTable TblaInstructor) {
-        this.TblaInstructor = TblaInstructor;
-    }
-
-    public JTextField getTxtcodigoHorario() {
-        return txtcodigoHorario;
-    }
-
-    public void setTxtcodigoHorario(JTextField txtcodigoHorario) {
-        this.txtcodigoHorario = txtcodigoHorario;
-    }
-
-
-    public JTextField getTxtBuscar() {
-        return txtBuscar;
-    }
-
-    public void setTxtBuscar(JTextField txtBuscar) {
-        this.txtBuscar = txtBuscar;
-    }
-
-    public JTextField getTxtapellido() {
-        return txtapellido;
-    }
-
-    public void setTxtapellido(JTextField txtapellido) {
-        this.txtapellido = txtapellido;
+    public void setjDialoInstructor(JDialog jDialoInstructor) {
+        this.jDialoInstructor = jDialoInstructor;
     }
 
     public JTextField getTxtareatrabajo() {
@@ -598,20 +521,20 @@ public class VistaInstructor extends javax.swing.JFrame {
         this.txtareatrabajo = txtareatrabajo;
     }
 
-    public JTextField getTxtcedula() {
-        return txtcedula;
-    }
-
-    public void setTxtcedula(JTextField txtcedula) {
-        this.txtcedula = txtcedula;
-    }
-
     public JTextField getTxtcodempleado() {
         return txtcodempleado;
     }
 
     public void setTxtcodempleado(JTextField txtcodempleado) {
         this.txtcodempleado = txtcodempleado;
+    }
+
+    public JTextField getTxtcodigoHorario() {
+        return txtcodigoHorario;
+    }
+
+    public void setTxtcodigoHorario(JTextField txtcodigoHorario) {
+        this.txtcodigoHorario = txtcodigoHorario;
     }
 
     public JTextField getTxtcodinstructor() {
@@ -630,20 +553,12 @@ public class VistaInstructor extends javax.swing.JFrame {
         this.txtdescripcion = txtdescripcion;
     }
 
-    public JTextField getTxtdireccion() {
-        return txtdireccion;
+    public JTextField getTxtinstruccodPersona() {
+        return txtinstruccodPersona;
     }
 
-    public void setTxtdireccion(JTextField txtdireccion) {
-        this.txtdireccion = txtdireccion;
-    }
-
-    public JTextField getTxtnombre() {
-        return txtnombre;
-    }
-
-    public void setTxtnombre(JTextField txtnombre) {
-        this.txtnombre = txtnombre;
+    public void setTxtinstruccodPersona(JTextField txtinstruccodPersona) {
+        this.txtinstruccodPersona = txtinstruccodPersona;
     }
 
     public JTextField getTxtsalario() {
@@ -654,38 +569,7 @@ public class VistaInstructor extends javax.swing.JFrame {
         this.txtsalario = txtsalario;
     }
 
-    public JTextField getTxttelefono() {
-        return txttelefono;
-    }
-
-    public void setTxttelefono(JTextField txttelefono) {
-        this.txttelefono = txttelefono;
-    }
-
-    public JButton getBtnAceptar() {
-        return btnAceptar;
-    }
-
-    public void setBtnAceptar(JButton btnAceptar) {
-        this.btnAceptar = btnAceptar;
-    }
-
-    public JButton getBtnCancelar() {
-        return btnCancelar;
-    }
-
-    public void setBtnCancelar(JButton btnCancelar) {
-        this.btnCancelar = btnCancelar;
-    }
-
-    public JDialog getjDialoInstructor() {
-        return jDialoInstructor;
-    }
-
-    public void setjDialoInstructor(JDialog jDialoInstructor) {
-        this.jDialoInstructor = jDialoInstructor;
-    }
-
+   
     
 
     
