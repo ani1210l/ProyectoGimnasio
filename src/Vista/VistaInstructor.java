@@ -143,14 +143,13 @@ public class VistaInstructor extends javax.swing.JFrame {
                                 .addComponent(jLabel20)
                                 .addGap(33, 33, 33)
                                 .addComponent(txtinstruccodPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel11)
-                                    .addGap(37, 37, 37)
-                                    .addComponent(txtsalario, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel9)
-                                    .addGap(21, 21, 21)
+                                    .addComponent(jLabel11))
+                                .addGap(21, 21, 21)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtsalario, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtcodempleado, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(33, 33, 33)
                         .addComponent(jLabel13)
@@ -222,7 +221,7 @@ public class VistaInstructor extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(51, 153, 255));
-        jLabel15.setText("REGISTROS DE CLIENTES - SERVICIOS");
+        jLabel15.setText("REGISTRO INSTRUCTOR");
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LOGO.jpg"))); // NOI18N
 
@@ -235,7 +234,7 @@ public class VistaInstructor extends javax.swing.JFrame {
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
                 .addComponent(jLabel15)
                 .addContainerGap())
         );
@@ -334,7 +333,7 @@ public class VistaInstructor extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "cliente_Serv_cod", "Fechaingreso", "Fechafin", "cod_cliente", "cod_servicio"
+                "Codigo", "", "Fechafin", "cod_cliente", "cod_servicio"
             }
         ));
         jScrollPane1.setViewportView(TblaInstructor);

@@ -65,19 +65,19 @@ public class ControladorInstructor {
 
     public void iniciarControl() {
 
-        vista.getBtnCrear().addActionListener(l -> abrirDlgEmpleado());
+        vista.getBtnCrear().addActionListener(l -> abrirDlgoInstructor());
         vista.getBtnActualizar().addActionListener(l -> cargarInstructorTabla());
-        vista.getBtnModificar().addActionListener(l -> abrirDlgEmpleado());
-//        vista.getBtnEliminar().addActionListener(l -> eliminarEmpleado());
+        vista.getBtnModificar().addActionListener(l -> abrirYCargarDatosEnElDialog());
+//        vista.getBtnEliminar().addActionListener(l -> eliminarInstructor());
         vista.getBtnAceptar().addActionListener(l -> crearInstructor());
         vista.getBtnCancelar().addActionListener(l -> botonCancelar());
-        //vista.getBtngeneraReporte().addActionListener(l -> imprimirPersona());
+        //vista.getBtngeneraReporte().addActionListener(l -> imprimir());
         //vista.getBtnImprimir().addActionListener(l -> abrirJDlgImprimir());
-        buscarEmpleado();
+        buscarInstructor();
 
     }
 
-    public void abrirDlgEmpleado() {
+    public void abrirDlgoInstructor() {
 
         vista.getjDialoInstructor().setName("Crear nuevo instructor");
         vista.getjDialoInstructor().setLocationRelativeTo(vista);
@@ -116,7 +116,7 @@ public class ControladorInstructor {
 
     }
 
-    private void buscarEmpleado() {
+    private void buscarInstructor() {
 
         KeyListener eventoTeclado = new KeyListener() {//Crear un objeto de tipo keyListener(Es una interface) por lo tanto se debe implementar sus metodos abstractos
 
@@ -164,37 +164,72 @@ public class ControladorInstructor {
 
         if ("Crear nuevo instructor".equals(vista.getjDialoInstructor().getName())) {
 
-            ModeloEmpleado empleado = new ModeloEmpleado();
+            Modelo_Instructor instructor = new Modelo_Instructor();
 
-            empleado.setPer_cedula(vista.getTxtcedula().getText());
-            empleado.setPer_nombre(vista.getTxtnombre().getText());
-            empleado.setPer_apellido(vista.getTxtapellido().getText());
-            Date fecha = vista.getjFecha().getDate();
-            java.sql.Date fechaSQL = new java.sql.Date(fecha.getDate());
-            empleado.setPer_fechaNac(fechaSQL);
-            empleado.setPer_telefono(vista.getTxttelefono().getText());
-            empleado.setPer_direccion(vista.getTxtdireccion().getText());
             int codigoEmpleado = Integer.parseInt(vista.getTxtcodempleado().getText());
-            int codigoEmpleadoPersona = Integer.parseInt(vista.getTxtcodempleadopers().getText());
+            int codigoPersona = Integer.parseInt(vista.getTxtinstruccodPersona().getText());
             double salario = Double.parseDouble(vista.getTxtsalario().getText());
-            int codigoHorario = Integer.parseInt(vista.getTxtHorario().getText());
+            int codigoHorario = Integer.parseInt(vista.getTxtcodigoHorario().getText());
+            int codigoInstructor = Integer.parseInt(vista.getTxtcodinstructor().getText());
 
-            empleado.setEmpleado_codigo(codigoEmpleado);
-            empleado.setEmp_codper(codigoEmpleadoPersona);
-            empleado.setSalario_emp(salario);
-            empleado.setHorario_codigo(codigoHorario);
+            String areaTrabajo = vista.getTxtareatrabajo().getText();
+            String descripcion = vista.getTxtdescripcion().getText();
 
-            if (empleado.crearEmpleado() == null) {
-                JOptionPane.showMessageDialog(null, "Empleado creado");
+            instructor.setEmpleado_codigo(codigoEmpleado);
+            instructor.setCod_persona(codigoPersona);
+            instructor.setSalario_emp(salario);
+            instructor.setHorario_codigo(codigoHorario);
+            instructor.setIns_areatrabajo(areaTrabajo);
+            instructor.setIns_codigo(codigoInstructor);
+            instructor.setDescripcion(descripcion);
+
+            if (instructor.CrearInstructor() == null) {
+                JOptionPane.showMessageDialog(null, "Instructor creado");
                 crearInstructor = true;
             } else {
-                System.out.println("El empleado NO se pudo crear");
+                System.out.println("El instructor NO se pudo crear");
             }
 
         } else {
 
-            JOptionPane.showMessageDialog(null, "El numero de empleado ya se encuentra registrado");
+            JOptionPane.showMessageDialog(null, "El numero de instructor ya se encuentra registrado");
         }
         return crearInstructor;
+    }
+
+    private void abrirYCargarDatosEnElDialog() {
+
+        int fila = vista.getTblaInstructor().getSelectedRow();
+
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Aun no ha seleccionado una fila");
+        } else {
+
+            //Abrir jDialog de campos de Docente
+            vista.getjDialoInstructor().setName("Modificar instructor");
+            vista.getjDialoInstructor().setLocationRelativeTo(null);
+            vista.getjDialoInstructor().setSize(879, 565);
+            vista.getjDialoInstructor().setTitle("Modificar  instructor");
+            vista.getjDialoInstructor().setVisible(true);
+
+            //ModeloPersona modeloPersona = new ModeloPersona();
+            List<Instructor> listae = modelo.listaInstructorTabla();
+
+            listae.stream().forEach(instructor -> {
+
+                if (instructor.getPer_cedula().equals(vista.getTblaInstructor().getValueAt(fila, 0).toString())) {
+
+                    vista.getTxtcodempleado().setText(String.valueOf(instructor.getEmpleado_codigo()));
+                    vista.getTxtsalario().setText(String.valueOf(instructor.getSalario_emp()));
+                    vista.getTxtinstruccodPersona().setText(String.valueOf(instructor.getCod_persona()));
+                    vista.getTxtcodigoHorario().setText(String.valueOf(instructor.getHorario_codigo()));
+
+                    vista.getTxtcodinstructor().setText(String.valueOf(instructor.getIns_codigo()));
+                    vista.getTxtareatrabajo().setText(instructor.getIns_areatrabajo());
+                    vista.getTxtdescripcion().setText(instructor.getDescripcion());
+
+                }
+            });
+        }
     }
 }
