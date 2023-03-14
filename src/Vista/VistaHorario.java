@@ -16,6 +16,7 @@ public class VistaHorario extends javax.swing.JInternalFrame {
     public VistaHorario() {
         initComponents();
     }
+    
 
    
     @SuppressWarnings("unchecked")
