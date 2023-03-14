@@ -142,8 +142,7 @@ public class ControladorPersona {
             });
         }
     }
-
-    public boolean crearPersona() {
+        public boolean crearPersona() {
 
         boolean crearPersona = false;
         //Insertar persona
@@ -178,7 +177,6 @@ public class ControladorPersona {
 
         return crearPersona;
     }
-
     public void modificarPersona() {
         if (validarDatosPersona()) {
             ModeloPersona persona = new ModeloPersona();
@@ -308,8 +306,7 @@ public class ControladorPersona {
                 validar = false;
             } else {
                 if (Period.between(fechaNueva, LocalDate.now()).getYears() > 70) { //Comparo si la persona tiene menos de 70 años
-                    JOptionPane.showMessageDialog(null, "Fecha incorrecta. Usted sobrepasa los 70 años");
-                    validar = false;
+                    JOptionPane.showMessageDialog(null, "Fecha incorrecta. Usted sobrepasa los 70 años");                    validar = false;
                 }
             }
         }

@@ -21,9 +21,9 @@ import javax.swing.JOptionPane;
 public class ConexionPG {
     Connection con;
 
-    String cadenaConexion = "jdbc:postgresql://localhost:3687/Gimnasio_onepice";
+    String cadenaConexion = "jdbc:postgresql://localhost:5432/Gimnasio_onepice";
     String usuarioPG = "postgres";
-    String passPG = "368776";
+    String passPG = "damian2340";
 
     public ConexionPG() {
 

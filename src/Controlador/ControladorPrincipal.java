@@ -8,7 +8,8 @@ package Controlador;
 import Modelo.*;
 import Vista.VistaPrincipal;
 import Vista.VistaPersona;
-
+import Vista.*;
+import Vista.VistaCliente;
 /**
  *
  * @author Usuario
@@ -25,6 +26,8 @@ public class ControladorPrincipal {
 
     public void iniciaControl() {
         vistaPrincipal.getBtnpersonas().addActionListener(l -> registroPersona());
+
+        vistaPrincipal.getBtnregistrocli().addActionListener(l -> registrocliente());
     }
 
     private void registroPersona() {
@@ -39,6 +42,21 @@ public class ControladorPrincipal {
 
         ControladorPersona controlpers = new ControladorPersona(modeloper, vistaper);
         controlpers.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
+
+    }
+
+     private void registrocliente() {
+
+        //vistaPrincipal.getjDesktopPane().removeAll(); //Remuevo todos los elementos que esten en sobre el desktopPane antes de abrir las ventanas
+        //Instancio las clases del Modelo y la Vista.
+         VistaCliente VISTAC = new VistaCliente();
+        modelo_cliente modeloC = new modelo_cliente();
+
+        //Agregar Vista Personas al Desktop Pane.
+        vistaPrincipal.getjDesktopPane().add(VISTAC);
+
+        ControladorCliente controlc = new ControladorCliente(modeloC, VISTAC);
+        controlc.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
 
     }
 
