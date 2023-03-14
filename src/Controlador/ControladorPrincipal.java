@@ -56,7 +56,7 @@ public class ControladorPrincipal {
         vistaPrincipal.getjDesktopPane().add(VISTAC);
 
         ControladorCliente controlc = new ControladorCliente(modeloC, VISTAC);
-        controlc.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
+        controlc.iniciarControl();//EmpMMMMMMMMezamos las escuchas a los eventos de la vista, Listeners.
 
     }
      
