@@ -10,6 +10,13 @@ import javax.swing.JDialog;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author damian
@@ -72,6 +79,14 @@ public class VistaCliente extends javax.swing.JInternalFrame {
         this.btnModificarcli = btnModificarcli;
     }
 
+    public JDateChooser getFechaing() {
+        return fechaing;
+    }
+
+    public void setFechaing(JDateChooser fechaing) {
+        this.fechaing = fechaing;
+    }
+
     public JDateChooser getFechanacimiento() {
         return fechanacimiento;
     }
@@ -86,6 +101,158 @@ public class VistaCliente extends javax.swing.JInternalFrame {
 
     public void setjDcliente(JDialog jDcliente) {
         this.jDcliente = jDcliente;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel14() {
+        return jLabel14;
+    }
+
+    public void setjLabel14(JLabel jLabel14) {
+        this.jLabel14 = jLabel14;
+    }
+
+    public JLabel getjLabel17() {
+        return jLabel17;
+    }
+
+    public void setjLabel17(JLabel jLabel17) {
+        this.jLabel17 = jLabel17;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public void setjPanel3(JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+
+    public JPanel getjPanel4() {
+        return jPanel4;
+    }
+
+    public void setjPanel4(JPanel jPanel4) {
+        this.jPanel4 = jPanel4;
+    }
+
+    public JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public void setjPanel5(JPanel jPanel5) {
+        this.jPanel5 = jPanel5;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JLabel getRegistro() {
+        return registro;
+    }
+
+    public void setRegistro(JLabel registro) {
+        this.registro = registro;
     }
 
     public JTable getTblClientes() {
@@ -120,8 +287,6 @@ public class VistaCliente extends javax.swing.JInternalFrame {
         this.txtcedula = txtcedula;
     }
 
-   
-
     public JTextField getTxtcodper() {
         return txtcodper;
     }
@@ -138,16 +303,6 @@ public class VistaCliente extends javax.swing.JInternalFrame {
         this.txtdireccion = txtdireccion;
     }
 
-    public JDateChooser getFechaing() {
-        return fechaing;
-    }
-
-    public void setFechaing(JDateChooser fechaing) {
-        this.fechaing = fechaing;
-    }
-
-   
-
     public JTextField getTxtnombre() {
         return txtnombre;
     }
@@ -163,6 +318,8 @@ public class VistaCliente extends javax.swing.JInternalFrame {
     public void setTxttelefono(JTextField txttelefono) {
         this.txttelefono = txttelefono;
     }
+
+  
 
     /**
      * This method is called from within the constructor to initialize the form.

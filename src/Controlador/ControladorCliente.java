@@ -26,6 +26,7 @@ import javax.xml.ws.Holder;
 
 /**
  *
+<<<<<<< HEAD
  * @author damian
  */
 public class ControladorCliente {
@@ -340,4 +341,42 @@ public class ControladorCliente {
 
     
 
+
+
+ 
+public class ControladorClientes {
+
+    private modelo_cliente modelo;
+    private VistaCliente vista;
+    VistaPrincipal p = new VistaPrincipal();
+
+    public ControladorClientes(modelo_cliente modelo, VistaCliente vista) {
+        this.modelo = modelo;
+        this.vista = vista;
+        vista.setVisible(true);
+
+        vista.setSize(p.getjDesktopPane().getWidth(), p.getjDesktopPane().getHeight());
+        vista.getjDcliente().setResizable(true);
+        cargarClienteTabla();
+    }
+
+    public void cargarClienteTabla() {
+        DefaultTableModel tblModel;
+        tblModel = (DefaultTableModel) vista.getTblClientes().getModel();
+        tblModel.setNumRows(0);//limpio filas de la tabla.
+
+        List<Cliente> listac = modelo.listaclientesTabla();//Enlazo al Modelo y obtengo los datos
+        Holder<Integer> i = new Holder<>(0);//Contador para las filas. 'i' funciona dentro de una expresion lambda
+
+        listac.stream().forEach(pe -> {
+
+            tblModel.addRow(new Object[9]);//Creo una fila vacia
+            vista.getTblClientes().setValueAt(pe.getCliente_codigo(), i.value, 0);
+            vista.getTblClientes().setValueAt(pe.getFecha_ingreso(), i.value, 1);
+            vista.getTblClientes().setValueAt(pe.getCli_codper(), i.value, 2);
+
+            i.value++;
+        });
+    }
+}
 }
