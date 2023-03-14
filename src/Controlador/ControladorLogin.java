@@ -6,7 +6,7 @@ package Controlador;
 
 /**
  *
- * @author Usuario
+ * @author UsuarAAio
  */
 public class ControladorLogin {
     
