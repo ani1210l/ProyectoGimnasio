@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package Controlador;
 
 import Modelo.modelo_cliente;
@@ -48,7 +49,7 @@ public class ControladorCliente {
     public void cargarClienteTabla() {
         DefaultTableModel tblModel;
         tblModel = (DefaultTableModel) vista.getTblClientes().getModel();
-        tblModel.setNumRows(0);//limpio filas de la tabla.
+        tblModel.setNumRows(0);//limpio filas de la tablaSSSSS.
 
         List<Cliente> listac = modelo.listaclientesTabla();//Enlazo al Modelo y obtengo los datos
         Holder<Integer> i = new Holder<>(0);//Contador para las filas. 'i' funciona dentro de una expresion lambda
