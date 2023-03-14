@@ -30,10 +30,9 @@ public class ControladorInstructor {
     private VistaInstructor vista;
     private JFileChooser jfc;
 
-    public ControladorInstructor(Modelo_Instructor modelo, VistaInstructor vista, JFileChooser jfc) {
+    public ControladorInstructor(Modelo_Instructor modelo, VistaInstructor vista) {
         this.modelo = modelo;
         this.vista = vista;
-        this.jfc = jfc;
         vista.setVisible(true);
         cargarInstructorTabla();
     }

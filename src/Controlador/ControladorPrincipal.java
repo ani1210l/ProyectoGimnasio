@@ -10,6 +10,7 @@ import Vista.VistaPrincipal;
 import Vista.VistaPersona;
 import Vista.*;
 import Vista.VistaCliente;
+
 /**
  *
  * @author Usuario
@@ -28,6 +29,9 @@ public class ControladorPrincipal {
         vistaPrincipal.getBtnpersonas().addActionListener(l -> registroPersona());
 
         vistaPrincipal.getBtnregistrocli().addActionListener(l -> registrocliente());
+        vistaPrincipal.getBtnregistroemp().addActionListener(l -> registroEmpleado());
+        vistaPrincipal.getBtninstructor().addActionListener(l -> registroInstructor());
+
     }
 
     private void registroPersona() {
@@ -45,11 +49,11 @@ public class ControladorPrincipal {
 
     }
 
-     private void registrocliente() {
+    private void registrocliente() {
 
         //vistaPrincipal.getjDesktopPane().removeAll(); //Remuevo todos los elementos que esten en sobre el desktopPane antes de abrir las ventanas
         //Instancio las clases del Modelo y la Vista.
-         VistaCliente VISTAC = new VistaCliente();
+        VistaCliente VISTAC = new VistaCliente();
         modelo_cliente modeloC = new modelo_cliente();
 
         //Agregar Vista Personas al Desktop Pane.
@@ -59,12 +63,12 @@ public class ControladorPrincipal {
         controlc.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
 
     }
-     
-     private void registroEmpleado() {
+
+    private void registroEmpleado() {
 
         //vistaPrincipal.getjDesktopPane().removeAll(); //Remuevo todos los elementos que esten en sobre el desktopPane antes de abrir las ventanas
         //Instancio las clases del Modelo y la Vista.
-         VistaEmpleado VISTAC = new VistaEmpleado();
+        VistaEmpleado VISTAC = new VistaEmpleado();
         ModeloEmpleado modeloC = new ModeloEmpleado();
 
         //Agregar Vista Personas al Desktop Pane.
@@ -74,5 +78,21 @@ public class ControladorPrincipal {
         controlc.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
 
     }
+    
+    private void registroInstructor() {
+
+        //vistaPrincipal.getjDesktopPane().removeAll(); //Remuevo todos los elementos que esten en sobre el desktopPane antes de abrir las ventanas
+        //Instancio las clases del Modelo y la Vista.
+        VistaInstructor VISTAC = new VistaInstructor();
+        Modelo_Instructor modeloC = new Modelo_Instructor();
+
+        //Agregar Vista Personas al Desktop Pane.
+        vistaPrincipal.getjDesktopPane().add(VISTAC);
+
+        ControladorInstructor controlc = new ControladorInstructor(modeloC, VISTAC);
+        controlc.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
+    }
+    
+    
 
 }
