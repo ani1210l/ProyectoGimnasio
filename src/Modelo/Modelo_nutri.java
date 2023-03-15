@@ -19,18 +19,18 @@ import java.util.logging.Logger;
  */
 public class Modelo_nutri extends Nutricionista {
     ConexionPG conpg = new ConexionPG();
-
-    public Modelo_nutri() {
-    }
-
-    public Modelo_nutri(int nutricionista_codigo, String rutina) {
-        super(nutricionista_codigo, rutina);
-    }
-
-    public Modelo_nutri(int empleado_codigo, double salario_emp, int horario_codigo, int emp_codper) {
-        super(empleado_codigo, salario_emp, horario_codigo, emp_codper);
-    }
-
+//
+//    public Modelo_nutri() {
+//    }
+//
+//    public Modelo_nutri(int nutricionista_codigo, String rutina) {
+//        super(nutricionista_codigo, rutina);
+//    }
+//
+//    public Modelo_nutri(int empleado_codigo, double salario_emp, int horario_codigo, int emp_codper) {
+//        super(empleado_codigo, salario_emp, horario_codigo, emp_codper);
+//    }
+//
 
 
 

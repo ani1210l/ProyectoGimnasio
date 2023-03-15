@@ -19,7 +19,9 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import javax.xml.ws.Holder;
 
 /**
@@ -45,23 +47,13 @@ public class ControladorEmpleado {
     }
 
     private void cargarEmpleadoTabla() {
-        vista.getTblEmpleado().setRowHeight(100);
-        DefaultTableModel tblModel;
-        tblModel = (DefaultTableModel) vista.getTblEmpleado().getModel();
-        tblModel.setNumRows(0);//limpio filas de la tabla.
+        DefaultTableModel tabla = (DefaultTableModel) vista.getTblEmpleado().getModel();
+        tabla.setNumRows(0);
 
-        List<Empleado> listap = modelo.listaEmpleadosTabla();//Enlazo al Modelo y obtengo los datos
-        Holder<Integer> i = new Holder<>(0);//Contador para las filas. 'i' funciona dentro de una expresion lambda
-
-        listap.stream().forEach(pe -> {
-
-            tblModel.addRow(new Object[9]);//Creo una fila vacia
-            vista.getTblEmpleado().setValueAt(pe.getEmpleado_codigo(), i.value, 0);
-            vista.getTblEmpleado().setValueAt(pe.getSalario_emp(), i.value, 1);
-            vista.getTblEmpleado().setValueAt(pe.getHorario_codigo(), i.value, 2);
-            vista.getTblEmpleado().setValueAt(pe.getEmp_codper(), i.value, 3);
-
-            i.value++;
+        List<Empleado> horarios = modelo.listaEmpleadosTabla();
+        horarios.stream().forEach(p -> {
+            String[] datos = {String.valueOf(p.getEmpleado_codigo()), String.valueOf(p.getEmp_codper()), String.valueOf(p.getSalario_emp()), p.getEmp_horario()};
+            tabla.addRow(datos);
         });
 
     }
@@ -120,7 +112,8 @@ public class ControladorEmpleado {
                     vista.getTxtcodempleado().setText(String.valueOf(empleado.getEmpleado_codigo()));
                     vista.getTxtsalario().setText(String.valueOf(empleado.getSalario_emp()));
                     vista.getTxtcodempleadopers().setText(String.valueOf(empleado.getEmp_codper()));
-                    vista.getTxtHorario().setText(String.valueOf(empleado.getHorario_codigo()));
+
+                    vista.getCmdHorario().setSelectedItem(empleado.getEmp_horario());
 
                 }
             });
@@ -148,12 +141,12 @@ public class ControladorEmpleado {
                 int codigoEmpleado = Integer.parseInt(vista.getTxtcodempleado().getText());
                 int codigoEmpleadoPersona = Integer.parseInt(vista.getTxtcodempleadopers().getText());
                 double salario = Double.parseDouble(vista.getTxtsalario().getText());
-                int codigoHorario = Integer.parseInt(vista.getTxtHorario().getText());
+                String sacarhorario = vista.getCmdHorario().getSelectedItem().toString();
 
                 empleado.setEmpleado_codigo(codigoEmpleado);
                 empleado.setEmp_codper(codigoEmpleadoPersona);
                 empleado.setSalario_emp(salario);
-                empleado.setHorario_codigo(codigoHorario);
+                empleado.setEmp_horario(sacarhorario);
 
                 if (empleado.crearEmpleado() == null) {
                     JOptionPane.showMessageDialog(null, "Empleado creado");
@@ -265,7 +258,7 @@ public class ControladorEmpleado {
                 empleado.setPer_direccion(vista.getTxtdireccion().getText());
                 vista.getTxtcodempleado().setText(String.valueOf(empleado.getEmpleado_codigo()));
                 vista.getTxtcodempleadopers().setText(String.valueOf(empleado.getEmp_codper()));
-                vista.getTxtHorario().setText(String.valueOf(empleado.getHorario_codigo()));
+                vista.getCmdHorario().setSelectedItem(String.valueOf(empleado.getEmp_horario()));
                 vista.getTxtsalario().setText(String.valueOf(empleado.getSalario_emp()));
 
                 if (empleado.modificarEmpleado() == null) {
@@ -287,7 +280,6 @@ public class ControladorEmpleado {
     }
 
     public void buscarEmpleado() {
-
         KeyListener eventoTeclado = new KeyListener() {//Crear un objeto de tipo keyListener(Es una interface) por lo tanto se debe implementar sus metodos abstractos
 
             @Override
@@ -303,33 +295,26 @@ public class ControladorEmpleado {
             @Override
             public void keyReleased(KeyEvent e) {
 
-                DefaultTableModel tblModel;
-                tblModel = (DefaultTableModel) vista.getTblEmpleado().getModel();
-                tblModel.setNumRows(0);//limpio filas de la tabla.
+                //CODIGO PARA FILTRAR LOS DATOS DIRECTAMENTE DE LA TABLA. NO ELIMINAR. SI FUNCIONA. ES MUY IMPORTANTE
+                TableRowSorter<DefaultTableModel> filtrar;
 
-                List<Empleado> listaEm = modelo.buscarEmpleado(vista.getTxtBuscar().getText());//Enlazo al Modelo y obtengo los datos
-                Holder<Integer> i = new Holder<>(0);//contador para el no. fila
+                DefaultTableModel tabla = (DefaultTableModel) vista.getTblEmpleado().getModel();
 
-                listaEm.stream().forEach(pe -> {
+                //vista.getTablaconduccion().setAutoCreateRowSorter(true);
+                filtrar = new TableRowSorter<>(tabla);
+                vista.getTblEmpleado().setRowSorter(filtrar);
 
-                    tblModel.addRow(new Object[9]);
-                    vista.getTblEmpleado().setValueAt(pe.getPer_cedula(), i.value, 0);
-                    vista.getTblEmpleado().setValueAt(pe.getPer_nombre(), i.value, 1);
-                    vista.getTblEmpleado().setValueAt(pe.getPer_apellido(), i.value, 2);
-                    vista.getTblEmpleado().setValueAt(pe.getPer_telefono(), i.value, 3);
-                    vista.getTblEmpleado().setValueAt(pe.getPer_direccion(), i.value, 4);
-                    vista.getTblEmpleado().setValueAt(pe.getEmpleado_codigo(), i.value, 5);
+                try {
 
-                    vista.getTblEmpleado().setValueAt(pe.getEmp_codper(), i.value, 6);
-                    vista.getTblEmpleado().setValueAt(pe.getHorario_codigo(), i.value, 7);
-                    vista.getTblEmpleado().setValueAt(pe.getSalario_emp(), i.value, 8);
-
-                    i.value++;
-                });
+                    filtrar.setRowFilter(RowFilter.regexFilter(vista.getTxtBuscar().getText())); //Se pasa como parametro el campo de donde se va a obtener la informacion y el (3) es la columna con la cual va a buscar las coincidencias
+                } catch (Exception ex) {
+                    System.out.println("Error: " + ex);
+                }
             }
         };
 
-        vista.getBuscar().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener 
+        vista.getTxtBuscar().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener
+
     }
 
 }

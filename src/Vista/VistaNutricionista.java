@@ -17,7 +17,7 @@ import javax.swing.JTextField;
  *
  * @author Michelle
  */
-public class VistaNutricionista extends javax.swing.JFrame {
+public class VistaNutricionista extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VistaNutricionista

@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import java.awt.event.KeyListener;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,27 +21,35 @@ import java.util.logging.Logger;
 public class ModeloEmpleado extends Empleado {
     ConexionPG conpg = new ConexionPG();
 
+    public ModeloEmpleado(int empleado_codigo, double salario_emp, String emp_horario, int emp_codper) {
+        super(empleado_codigo, salario_emp, emp_horario, emp_codper);
+    }
+
+    public ModeloEmpleado(int empleado_codigo, double salario_emp, String emp_horario, int emp_codper, int cod_persona, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
+        super(empleado_codigo, salario_emp, emp_horario, emp_codper, cod_persona, per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion);
+    }
+
     public ModeloEmpleado() {
     }
 
-    public ModeloEmpleado(int empleado_codigo, double salario_emp, int horario_codigo, int emp_codper) {
-        super(empleado_codigo, salario_emp, horario_codigo, emp_codper);
-    }
+    
 
-    public ModeloEmpleado(int empleado_codigo, double salario_emp, int horario_codigo, int emp_codper, int cod_persona, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
-        super(empleado_codigo, salario_emp, horario_codigo, emp_codper, cod_persona, per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion);
-    }
+   
+    
+
+
+    
 
 
 
     public SQLException crearEmpleado() {
-        String sql = "INSERT INTO empleado(emp_codigo, emp_codper,emp_salario,emp_horario) VALUES ('" + getEmpleado_codigo() + "', '" + getEmp_codper()+ "', '"  + "', '" + getSalario_emp() + "', '"  + getHorario_codigo() + "');";
+        String sql = "INSERT INTO empleado(emp_codigo, emp_codper,emp_salario,emp_horario) VALUES ('" + getEmpleado_codigo() + "', '" + getEmp_codper()+ "', '"  + "', '" + getSalario_emp() + "', '"  + getEmp_horario()+ "');";
 
         return conpg.accion(sql);
     }
 
     public SQLException modificarEmpleado() {
-        String sql = "UPDATE empleado SET emp_codigo= '"+getEmpleado_codigo()+"', emp_codper='"+getEmp_codper()+"', emp_salario='"+getSalario_emp()+"', emp_horario='"+getHorario_codigo() + "');";
+        String sql = "UPDATE empleado SET emp_codigo= '"+getEmpleado_codigo()+"', emp_codper='"+getEmp_codper()+"', emp_salario='"+getSalario_emp()+"', emp_horario='"+getEmp_horario()+ "');";
 
         return conpg.accion(sql);
     }
@@ -70,7 +79,7 @@ public class ModeloEmpleado extends Empleado {
                 empleado.setEmpleado_codigo(rs.getInt("emp_codigo"));
                 empleado.setEmp_codper(rs.getInt("emp_codper"));
                 empleado.setSalario_emp(rs.getDouble("emp_salario"));
-                empleado.setHorario_codigo(rs.getInt("emp_horario"));
+                empleado.setEmp_horario(rs.getString("emp_horario"));
 
                 listaEmpleado.add(empleado);
             }
@@ -103,8 +112,8 @@ public class ModeloEmpleado extends Empleado {
                 empleado.setEmpleado_codigo(rs.getInt("emp_codigo"));
                 empleado.setEmp_codper(rs.getInt("emp_codper"));
                 empleado.setSalario_emp(rs.getDouble("emp_salario"));
-                empleado.setHorario_codigo(rs.getInt("emp_horario"));
-                
+                empleado.setEmp_horario(rs.getString("emp_horario"));
+                //verificar tipo de dato en la base o lo que se esta mandando ya que ya que se espera un entero (int) pero se está recibiendo una fecha (2023-03-01).
 
                 listaEmpleado.add(empleado); //Agrego los datos a la lista
             }
@@ -120,39 +129,7 @@ public class ModeloEmpleado extends Empleado {
         }
     }
 
-    public List<Empleado> buscarEmpleado(String empleado_codigo) {
-        try {
-
-            List<Empleado> listaEmpleadoBs = new ArrayList<>();
-
-            String sql = "select * from empleado where emp_codigo like '" + empleado_codigo + "%'";
-
-            ResultSet rs = conpg.consulta(sql);
-
-            //Pasar de "ResultSet" a "List"
-            while (rs.next()) {
-                //Crear las instancias de las personas
-                Empleado empleado = new Empleado();
-
-                //Todo lo que haga en la sentencia define como voy a extraer los datos
-                empleado.setEmpleado_codigo(rs.getInt("emp_codigo"));
-                empleado.setEmp_codper(rs.getInt("emp_codper"));
-                empleado.setSalario_emp(rs.getDouble("emp_salario"));
-                empleado.setHorario_codigo(rs.getInt("emp_emp"));
-                
-                listaEmpleadoBs.add(empleado); //Agrego los datos a la lista
-            }
-
-            //Cierro la conexion a la BD
-            rs.close();
-            //Retorno la lista
-            return listaEmpleadoBs;
-
-        } catch (SQLException ex) {
-            Logger.getLogger(ModeloEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }
-    }
+  
 
     public int traerCodigoDeEmpleadoCrear(String getEmp_codper) {
         int codigo = 0;

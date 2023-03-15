@@ -13,31 +13,23 @@ public class Instructor extends Empleado {
     private String descripcion;
     private int ins_codemp;
 
-    public Instructor() {
-    }
-
-    public Instructor(int ins_codigo, String ins_areatrabajo, String descripcion, int ins_codemp) {
+    public Instructor(int ins_codigo, String ins_areatrabajo, String descripcion, int ins_codemp, int empleado_codigo, double salario_emp, String emp_horario, int emp_codper) {
+        super(empleado_codigo, salario_emp, emp_horario, emp_codper);
         this.ins_codigo = ins_codigo;
         this.ins_areatrabajo = ins_areatrabajo;
         this.descripcion = descripcion;
         this.ins_codemp = ins_codemp;
     }
 
-    public Instructor(int ins_codigo, String ins_areatrabajo, String descripcion, int ins_codemp, int empleado_codigo, double salario_emp, int horario_codigo, int emp_codper) {
-        super(empleado_codigo, salario_emp, horario_codigo, emp_codper);
+    public Instructor(int ins_codigo, String ins_areatrabajo, String descripcion, int ins_codemp, int empleado_codigo, double salario_emp, String emp_horario, int emp_codper, int cod_persona, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
+        super(empleado_codigo, salario_emp, emp_horario, emp_codper, cod_persona, per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion);
         this.ins_codigo = ins_codigo;
         this.ins_areatrabajo = ins_areatrabajo;
         this.descripcion = descripcion;
         this.ins_codemp = ins_codemp;
     }
 
-    public Instructor(int ins_codigo, String ins_areatrabajo, String descripcion, int ins_codemp, int empleado_codigo, double salario_emp, int horario_codigo, int emp_codper, int cod_persona, String per_cedula, String per_nombre, String per_apellido, Date per_fechaNac, String per_telefono, String per_direccion) {
-        super(empleado_codigo, salario_emp, horario_codigo, emp_codper, cod_persona, per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion);
-        this.ins_codigo = ins_codigo;
-        this.ins_areatrabajo = ins_areatrabajo;
-        this.descripcion = descripcion;
-        this.ins_codemp = ins_codemp;
-    }
+
 
     public int getIns_codigo() {
         return ins_codigo;
