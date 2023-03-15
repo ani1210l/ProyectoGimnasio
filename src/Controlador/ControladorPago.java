@@ -135,11 +135,12 @@ public class ControladorPago {
                 modelopago personac = new modelopago();
 
                 //vista.getTxtcedula().setText(persona.getPer_cedula());
-                personac.setPago_codigo(Integer.parseInt(vista.getTxtcdpago().getText()));
+                
                 personac.setPag_rutina(vista.getTxtpagorut().getText());
                 personac.setDeuda(vista.getTxtdeuda().getText());
                 Date fecha = vista.getjDateChooser1().getDate();
                 java.sql.Date fechaSQL = new java.sql.Date(fecha.getDate());
+                 personac.setFecha(fechaSQL);
                 personac.setCod_cliente(Integer.parseInt(vista.getTxtcodcli().getText()));
                
                 if (personac.crearPago()== null) {
@@ -168,44 +169,29 @@ public class ControladorPago {
 
             validar = false;
         }*/
-        if (vista.getTxtcdpago().getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Ingrese el codigo pago");
-            validar = false;
-        } else {
-            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtcdpago().getText())) {
-                JOptionPane.showMessageDialog(null, "codigo pagoincorrecto");
-                validar = false;
-            }
-        }
+       
+            
+        
 
         if (vista.getTxtpagorut().getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingrese el pago de rutina");
             validar = false;
         } else {
-            if (!mivalidacion.validarTextoSinEspacio(vista.getTxtpagorut().getText())) {
-                JOptionPane.showMessageDialog(null, "pago de rutina incorrecto");
-                validar = false;
-            }
+            validar = true;
         }
 
         if (vista.getTxtdeuda().getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingrese la deuda");
             validar = false;
         } else {
-            if (!mivalidacion.validarTelefono(vista.getTxtdeuda().getText())) {
-                JOptionPane.showMessageDialog(null, "deuda incorrecto");
-                validar = false;
-            }
+           validar = true;
         }
 
         if (vista.getTxtcodcli().getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Ingrese codigo de clienten");
             validar = false;
         } else {
-            if (!mivalidacion.validarDireccion(vista.getTxtcodcli().getText())) {
-                JOptionPane.showMessageDialog(null, " codigo de clienten incorrecta");
-                validar = false;
-            }
+            validar = true;
         }
         if (vista.getjDateChooser1().getDate() == null) {
             JOptionPane.showMessageDialog(null, "Ingrese fecha de pago");

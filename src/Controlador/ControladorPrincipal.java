@@ -10,6 +10,7 @@ import Vista.VistaPrincipal;
 import Vista.VistaPersona;
 import Vista.*;
 import Vista.VistaCliente;
+import Vista.VistaPago;
 
 /**
  *
@@ -33,6 +34,7 @@ public class ControladorPrincipal {
 //        vistaPrincipal.getBtninstructor().addActionListener(l -> registroInstructor());
         vistaPrincipal.getBtnnutricionista().addActionListener(l -> registroNutricionista());
         vistaPrincipal.getBtnservicios().addActionListener(l -> registroServicios());
+          vistaPrincipal.getBtn_pago().addActionListener(l -> registropago());
 
     }
 
@@ -122,5 +124,18 @@ public class ControladorPrincipal {
         controlc.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
     }
     
+private void registropago() {
 
+        //vistaPrincipal.getjDesktopPane().removeAll(); //Remuevo todos los elementos que esten en sobre el desktopPane antes de abrir las ventanas
+        //Instancio las clases del Modelo y la Vista.
+        VistaPago VISTApa = new VistaPago();
+        modelopago modelopa = new modelopago();
+
+        //Agregar Vista Personas al Desktop Pane.
+        vistaPrincipal.getjDesktopPane().add(VISTApa);
+
+        ControladorPago controlpa = new ControladorPago(modelopa, VISTApa);
+        controlpa.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
+
+    }
 }
