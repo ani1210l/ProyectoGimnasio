@@ -53,7 +53,7 @@ public class modelopago extends Pago{
             //Pasar de "ResultSet" a "List"
             while (rs.next()) {
                 //Crear las instancias de las personas
-            Pago pago = new Pago(pago_codigo, deuda, pag_rutina, fecha, cod_cliente);
+            Pago pago = new Pago();
 
                 //Todo lo que haga en la sentencia define como voy a extraer los datos
                pago.setPago_codigo(rs.getInt("pag_codigo"));
@@ -78,7 +78,7 @@ public class modelopago extends Pago{
         }
     }
 
-    public List<Pago> buscarPagos(int cli_codper) {
+    public List<Pago> buscarPagos(int cod_cliente) {
         try {
             //Me retorna un "List" de "persona"
             List<Pago> lista = new ArrayList<>();

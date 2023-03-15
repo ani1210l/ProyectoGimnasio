@@ -11,22 +11,21 @@ import java.sql.Date;
  * @author Usuario
  */
 public class Pago {
-    
-     int pago_codigo;
-     String deuda,pag_rutina;
-     Date fecha;
-     int cod_cliente;
-
-    public Pago() {
-    }
-
-     
+private int pago_codigo;
+    private String deuda,pag_rutina;
+    private Date fecha;
+   private  int cod_cliente;
     public Pago(int pago_codigo, String deuda, String pag_rutina, Date fecha, int cod_cliente) {
         this.pago_codigo = pago_codigo;
         this.deuda = deuda;
         this.pag_rutina = pag_rutina;
         this.fecha = fecha;
         this.cod_cliente = cod_cliente;
+    }
+    
+     
+
+    public Pago() {
     }
 
     public int getPago_codigo() {
@@ -68,6 +67,8 @@ public class Pago {
     public void setCod_cliente(int cod_cliente) {
         this.cod_cliente = cod_cliente;
     }
+
+
      
 }
 
