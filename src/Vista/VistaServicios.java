@@ -14,7 +14,7 @@ import javax.swing.JTextField;
  *
  * @author Michelle
  */
-public class VistaServicios extends javax.swing.JFrame {
+public class VistaServicios extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VistaServicios

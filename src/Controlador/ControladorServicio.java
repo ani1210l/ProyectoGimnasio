@@ -28,11 +28,13 @@ public class ControladorServicio implements ActionListener {
     private VistaServicios vista;
     private Modelo_Servicio modelo;
 
-    VistaServicios viewservicio = new VistaServicios();
+//    VistaServicios viewservicio = new VistaServicios();
 
     public ControladorServicio(VistaServicios vista, Modelo_Servicio modelo) {
         this.vista = vista;
         this.modelo = modelo;
+        vista.setVisible(true);
+        
         this.vista.getGroupServicio().add(vista.getCardio());
         this.vista.getGroupServicio().add(vista.getBaiolo());
         this.vista.getGroupServicio().add(vista.getPesas());

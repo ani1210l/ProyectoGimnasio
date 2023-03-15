@@ -25,7 +25,7 @@ import javax.xml.ws.Holder;
  * @author Asus
  */
 public class ControladorInstructor {
-
+//
 //    private Modelo_Instructor modelo;
 //    private VistaInstructor vista;
 //    private JFileChooser jfc;
@@ -38,26 +38,13 @@ public class ControladorInstructor {
 //    }
 //
 //    private void cargarInstructorTabla() {
-//        vista.getTblaInstructor().setRowHeight(100);
-//        DefaultTableModel tblModel;
-//        tblModel = (DefaultTableModel) vista.getTblaInstructor().getModel();
-//        tblModel.setNumRows(0);//limpio filas de la tabla.
+//        DefaultTableModel tabla = (DefaultTableModel) vista.getTblaInstructor().getModel();
+//        tabla.setNumRows(0);
 //
-//        List<Instructor> listap = modelo.listaInstructorTabla();//Enlazo al Modelo y obtengo los datos
-//        Holder<Integer> i = new Holder<>(0);//Contador para las filas. 'i' funciona dentro de una expresion lambda
-//
-//        listap.stream().forEach(pe -> {
-//
-//            tblModel.addRow(new Object[9]);//Creo una fila vacia
-//
-//            vista.getTblaInstructor().setValueAt(pe.getCod_persona(), i.value, 0);
-//            vista.getTblaInstructor().setValueAt(pe.getEmpleado_codigo(), i.value, 1);
-//            vista.getTblaInstructor().setValueAt(pe.getHorario_codigo(), i.value, 2);
-//            vista.getTblaInstructor().setValueAt(pe.getSalario_emp(), i.value, 3);
-//            vista.getTblaInstructor().setValueAt(pe.getIns_codigo(), i.value, 4);
-//            vista.getTblaInstructor().setValueAt(pe.getIns_areatrabajo(), i.value, 5);
-//            vista.getTblaInstructor().setValueAt(pe.getDescripcion(), i.value, 6);
-//            i.value++;
+//        List<Instructor> horarios = modelo.listaEmpleadosTabla();
+//        horarios.stream().forEach(p -> {
+//            String[] datos = {String.valueOf(p.getEmpleado_codigo()), String.valueOf(p.getEmp_codper()), String.valueOf(p.getSalario_emp()), p.getEmp_horario()};
+//            tabla.addRow(datos);
 //        });
 //
 //    }
