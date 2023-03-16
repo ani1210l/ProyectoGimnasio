@@ -41,6 +41,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.btnCliente = btnCliente;
     }
 
+    public JButton getBtnServicio() {
+        return btnServicio;
+    }
+
+    public void setBtnServicio(JButton btnServicio) {
+        this.btnServicio = btnServicio;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
