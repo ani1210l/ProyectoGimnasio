@@ -9,7 +9,6 @@ import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import modelo.Cliente;
-import modelo.Instructor;
 import modelo.ModeloCliente;
 import modelo.ModeloPersona;
 import vista.VistaCliente;
@@ -31,7 +30,7 @@ public class ControladorCliente {
         vista.getBtnActualizar().addActionListener(l -> cargarTablaDeCliente());
         vista.getBtnModificar().addActionListener(l -> cargarDatosClienteEnTXT());
         vista.getBtnEliminar().addActionListener(l -> eliminarCliente());
-        vista.getBtnCancelar().addActionListener(l-> Cancelar());
+        vista.getBtnCancelar().addActionListener(l -> Cancelar());
         buscarRegistros();
         cargarTablaDeCliente();
     }
@@ -49,16 +48,17 @@ public class ControladorCliente {
 
     public void bloquearCampos() {
         vista.getTxtCedula().setEditable(false);
+        vista.getTxtCodigoCliente().setVisible(false);
     }
 
     public void desbloquearCampos() {
         vista.getTxtCedula().setEditable(true);
+        vista.getTxtCodigoCliente().setVisible(false);
     }
 
     public void cargarTablaDeCliente() {
         DefaultTableModel tabla = (DefaultTableModel) vista.getTblCliente().getModel();
         tabla.setNumRows(0);
-        limpiarCampos();
 
         List<Cliente> instructores = modelo.listaClientesTabla();
         instructores.stream().forEach(i -> {
@@ -177,6 +177,12 @@ public class ControladorCliente {
                     vista.getTxtTelefono().setText(cliente.getPer_telefono());
                     vista.getTxtDireccion().setText(cliente.getPer_direccion());
 
+                    for (int j = 0; j < vista.getComboMembresia().getItemCount(); j++) {
+                        if (vista.getComboMembresia().getItemAt(j).equalsIgnoreCase(cliente.getCliente_tipomembresia())) {
+                            vista.getComboMembresia().setSelectedIndex(j);
+                            j = vista.getComboMembresia().getItemCount();
+                        }
+                    }
                     //Cargar datos de instructor
                     vista.getTxtCodigoCliente().setText(String.valueOf(cliente.getCliente_codigo()));
 
@@ -256,7 +262,8 @@ public class ControladorCliente {
 
         vista.getTxtBuscar().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener 
     }
-    public void Cancelar(){
+
+    public void Cancelar() {
         vista.getjDlgCliente().setVisible(false);
     }
 
