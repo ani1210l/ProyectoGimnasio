@@ -15,6 +15,12 @@ public class ModeloPersona extends Persona {
         return conpg.accion(sql);
     }
 
+    public boolean modificarPersona() {
+        String sql = "UPDATE persona SET per_nombre = '" + getPer_nombre() + "', per_apellido = '" + getPer_apellido() + "', per_fechaNac = '" + getPer_fechaNac() + "',per_telefono = '" + getPer_telefono() + "', per_direccion = '" + getPer_direccion() + "' WHERE per_cedula = '" + getPer_cedula() + "';";
+
+        return conpg.accion(sql);
+    }
+
     public int validarRepetidos(String cedula) { //Metodo que sirve para validar la cantidad de cedulas existentes en la BD
         int cantidad = 0;
         try {
