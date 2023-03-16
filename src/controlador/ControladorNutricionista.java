@@ -17,10 +17,11 @@ public class ControladorNutricionista {
     public ControladorNutricionista(ModeloNutricionista modelo, VistaNutricionista vista) {
         this.modelo = modelo;
         this.vista = vista;
+        vista.setVisible(true);
     }
 
     public void iniciarControl() {
-        vista.getBtnCrearNUTRI().addActionListener(l -> abrirJDlgNutricionista());
+        vista.getBtnCrear().addActionListener(l -> abrirJDlgNutricionista());
         vista.getBtnGuardar().addActionListener(l -> crearModificarNutricionista());
 
     }
@@ -35,37 +36,25 @@ public class ControladorNutricionista {
 
     public void crearModificarNutricionista() {
 
-        if ("Crear nuevo instructor".equals(vista.getjDialogNutricionista().getName())) {
+        if ("Crear nuevo nutricionista".equals(vista.getjDialogNutricionista().getName())) {
 
             //Validar datos
             ModeloPersona persona = new ModeloPersona();
-            if (persona.validarRepetidos(vista.getTxtCedulanutri().getText()) == 0) {
+            if (persona.validarRepetidos(vista.getTxtCedula().getText()) == 0) {
 
                 //Setear datos de persona
-                persona.setPer_cedula(vista.getTxtCedulanutri().getText());
-                persona.setPer_nombre(vista.getTxtNombrenutri().getText());
-                persona.setPer_apellido(vista.getTxtApellidonutri().getText());
-                persona.setPer_telefono(vista.getTxtTelefononutri().getText());
-                persona.setPer_direccion(vista.getTxtDireccionnutri().getText());
+                persona.setPer_cedula(vista.getTxtCedula().getText());
+                persona.setPer_nombre(vista.getTxtNombre().getText());
+                persona.setPer_apellido(vista.getTxtApellido().getText());
+                persona.setPer_telefono(vista.getTxtTelefono().getText());
+                persona.setPer_direccion(vista.getTxtDireccion().getText());
 
-                Date fecha = vista.getFechaDeNacimientonutri().getDate();
+                Date fecha = vista.getFechaDeNacimiento().getDate();
                 java.sql.Date fechaSQL = new java.sql.Date(fecha.getTime());
                 persona.setPer_fechaNac(fechaSQL);
 
-                //Setear datos de instructor
-                modelo.setNutri_rutina(vista.getTxtRutina().getText());
-
-                String horario = "";
-                if (vista.getMatutino().isSelected()) {
-                    horario = "Matutino";
-                } else {
-                    if (vista.getVespertino().isSelected()) {
-                        horario = "Vespertino";
-
-                    }
-                }
-
-                modelo.setNutri_horario(horario);
+                //Setear datos de nutricionista
+                modelo.setNutri_aniosExperiencia(Integer.parseInt(vista.getSpinnerAniosExperiencia().getValue().toString()));
 
                 if (persona.crearPersona()) {
                     //Guarda el codigo de la persona
