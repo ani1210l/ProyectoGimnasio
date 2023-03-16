@@ -34,6 +34,7 @@ public class ControladorNutricionista {
 
         buscarRegistros();
         cargarTablaDeNutricionista();
+        
     }
 
     public void abrirJDlgNutricionista() {
@@ -45,6 +46,7 @@ public class ControladorNutricionista {
         cargarTablaDeNutricionista();
         //QUITAR VISIBILIDAD DEL CODIGO DEL INSTRUCTOR
         vista.getTxtCodigoNutricionista().setVisible(false);
+        LimpiarCampos();
     }
 
     public void cargarTablaNutricionistas() {
@@ -257,5 +259,15 @@ public class ControladorNutricionista {
 
     public void cancelar() {
         vista.getjDlgNutricionista().setVisible(false);
+    }
+    public void LimpiarCampos() {
+        vista.getTxtCedula().setText("");
+        vista.getTxtNombre().setText(" ");
+        vista.getTxtApellido().setText(" ");
+        vista.getTxtDireccion().setText(" ");
+        vista.getTxtTelefono().setText(" ");
+        vista.getSpinnerAniosExperiencia().setValue(0);
+        vista.getFechaDeNacimiento().setDate(null);
+
     }
 }
