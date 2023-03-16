@@ -12,16 +12,19 @@ import modelo.ModeloNutricionista;
 import modelo.ModeloPersona;
 import modelo.Nutricionista;
 import vista.VistaNutricionista;
+import vista.VistaPrincipal;
 
 public class ControladorNutricionista {
 
     ModeloNutricionista modelo;
     VistaNutricionista vista;
-
+     VistaPrincipal p = new VistaPrincipal();
     public ControladorNutricionista(ModeloNutricionista modelo, VistaNutricionista vista) {
         this.modelo = modelo;
         this.vista = vista;
         vista.setVisible(true);
+        vista.setSize(p.getEscritorioPrincipal().getWidth(), p.getEscritorioPrincipal().getHeight());
+        cargarTablaDeNutricionista();
     }
 
     public void iniciarControl() {
@@ -34,7 +37,7 @@ public class ControladorNutricionista {
 
         buscarRegistros();
         cargarTablaDeNutricionista();
-        
+
     }
 
     public void abrirJDlgNutricionista() {
@@ -260,6 +263,7 @@ public class ControladorNutricionista {
     public void cancelar() {
         vista.getjDlgNutricionista().setVisible(false);
     }
+
     public void LimpiarCampos() {
         vista.getTxtCedula().setText("");
         vista.getTxtNombre().setText(" ");
