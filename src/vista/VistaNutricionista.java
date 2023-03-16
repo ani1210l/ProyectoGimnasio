@@ -186,6 +186,7 @@ public class VistaNutricionista extends javax.swing.JInternalFrame {
         tblNutricionista = new javax.swing.JTable();
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setPreferredSize(new java.awt.Dimension(889, 495));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel14.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
