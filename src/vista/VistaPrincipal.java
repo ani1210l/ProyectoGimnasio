@@ -49,6 +49,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btnInstructor = new javax.swing.JButton();
         btnNutricionista = new javax.swing.JButton();
         btnCliente = new javax.swing.JButton();
+        btnServicio = new javax.swing.JButton();
         escritorioPrincipal = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,6 +62,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         btnCliente.setText("Cliente");
 
+        btnServicio.setText("Servicio");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -68,6 +71,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnServicio)
                     .addComponent(btnCliente)
                     .addComponent(btnNutricionista)
                     .addComponent(btnInstructor))
@@ -82,7 +86,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 .addComponent(btnNutricionista)
                 .addGap(34, 34, 34)
                 .addComponent(btnCliente)
-                .addContainerGap(295, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(btnServicio)
+                .addContainerGap(237, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout escritorioPrincipalLayout = new javax.swing.GroupLayout(escritorioPrincipal);
@@ -119,6 +125,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnCliente;
     private javax.swing.JButton btnInstructor;
     private javax.swing.JButton btnNutricionista;
+    private javax.swing.JButton btnServicio;
     private javax.swing.JDesktopPane escritorioPrincipal;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

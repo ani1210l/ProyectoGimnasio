@@ -51,6 +51,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btnServicio" min="-2" max="-2" attributes="0"/>
                       <Component id="btnCliente" min="-2" max="-2" attributes="0"/>
                       <Component id="btnNutricionista" min="-2" max="-2" attributes="0"/>
                       <Component id="btnInstructor" min="-2" max="-2" attributes="0"/>
@@ -68,7 +69,9 @@
                   <Component id="btnNutricionista" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="btnCliente" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="295" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Component id="btnServicio" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="237" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -87,6 +90,11 @@
         <Component class="javax.swing.JButton" name="btnCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cliente"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnServicio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Servicio"/>
           </Properties>
         </Component>
       </SubComponents>
