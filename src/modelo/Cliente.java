@@ -6,27 +6,18 @@ public class Cliente extends Persona {
 
     private int cliente_codigo;
     private int cliente_codper;
-    private Date cliente_fechaingreso;
-    private Date cliente_fechafin;
+    private String cliente_tipomembresia;
+    //private int cliente_cantidadmeses;
     private String cliente_estado;
 
     public Cliente() {
     }
 
-    public Cliente(int cliente_codigo, int cliente_codper, Date cliente_fechaingreso, Date cliente_fechafin, String cliente_estado) {
-        this.cliente_codigo = cliente_codigo;
-        this.cliente_codper = cliente_codper;
-        this.cliente_fechaingreso = cliente_fechaingreso;
-        this.cliente_fechafin = cliente_fechafin;
-        this.cliente_estado = cliente_estado;
-    }
-
-    public Cliente(int cliente_codigo, int cliente_codper, Date cliente_fechaingreso, Date cliente_fechafin, String cliente_estado, int per_codigo, String per_cedula, String per_nombre, String per_apellido, java.util.Date per_fechaNac, String per_telefono, String per_direccion) {
+    public Cliente(int cliente_codigo, int cliente_codper, String cliente_tipomembresia, String cliente_estado, int per_codigo, String per_cedula, String per_nombre, String per_apellido, java.util.Date per_fechaNac, String per_telefono, String per_direccion) {
         super(per_codigo, per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion);
         this.cliente_codigo = cliente_codigo;
         this.cliente_codper = cliente_codper;
-        this.cliente_fechaingreso = cliente_fechaingreso;
-        this.cliente_fechafin = cliente_fechafin;
+        this.cliente_tipomembresia = cliente_tipomembresia;
         this.cliente_estado = cliente_estado;
     }
 
@@ -46,20 +37,12 @@ public class Cliente extends Persona {
         this.cliente_codper = cliente_codper;
     }
 
-    public Date getCliente_fechaingreso() {
-        return cliente_fechaingreso;
+    public String getCliente_tipomembresia() {
+        return cliente_tipomembresia;
     }
 
-    public void setCliente_fechaingreso(Date cliente_fechaingreso) {
-        this.cliente_fechaingreso = cliente_fechaingreso;
-    }
-
-    public Date getCliente_fechafin() {
-        return cliente_fechafin;
-    }
-
-    public void setCliente_fechafin(Date cliente_fechafin) {
-        this.cliente_fechafin = cliente_fechafin;
+    public void setCliente_tipomembresia(String cliente_tipomembresia) {
+        this.cliente_tipomembresia = cliente_tipomembresia;
     }
 
     public String getCliente_estado() {
