@@ -58,19 +58,27 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btnNutricionista = new javax.swing.JButton();
         btnCliente = new javax.swing.JButton();
         btnServicio = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         escritorioPrincipal = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 204));
 
+        btnInstructor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/instructor.png"))); // NOI18N
         btnInstructor.setText("Instructor");
 
+        btnNutricionista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nutricionistat.png"))); // NOI18N
         btnNutricionista.setText("Nutricionista");
 
+        btnCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/agregar-usuario.png"))); // NOI18N
         btnCliente.setText("Cliente");
 
+        btnServicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/apoyo-tecnico.png"))); // NOI18N
         btnServicio.setText("Servicio");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/hat.png"))); // NOI18N
+        jLabel1.setText("GIMNASIO ONE PIECE");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -78,25 +86,28 @@ public class VistaPrincipal extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnServicio)
-                    .addComponent(btnCliente)
-                    .addComponent(btnNutricionista)
-                    .addComponent(btnInstructor))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnNutricionista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInstructor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnServicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(btnInstructor)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(btnNutricionista)
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
                 .addComponent(btnCliente)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(btnServicio)
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         javax.swing.GroupLayout escritorioPrincipalLayout = new javax.swing.GroupLayout(escritorioPrincipal);
@@ -135,6 +146,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnNutricionista;
     private javax.swing.JButton btnServicio;
     private javax.swing.JDesktopPane escritorioPrincipal;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
