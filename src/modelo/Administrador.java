@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author Usuario
+ * @author holi
  */
 public class Administrador extends Persona{
     private int adm_codigo;
