@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
 import java.sql.ResultSet;
@@ -20,6 +15,9 @@ import java.util.logging.Logger;
 public class ModeloAdministrador extends Administrador {
     
     ConexionPG conpg = new ConexionPG();
+
+    public ModeloAdministrador() {
+    }
 
     public ModeloAdministrador(int adm_codigo, int adm_codper, String adm_usuario, String adm_clave, String adm_estado) {
         super(adm_codigo, adm_codper, adm_usuario, adm_clave, adm_estado);
@@ -47,7 +45,7 @@ public class ModeloAdministrador extends Administrador {
         return conpg.accion(sql);
     }
 
-    public List<Administrador> listaAdministradoresTabla() {
+    public List<Administrador> listaAdminTabla() {
         try {
             //Me retorna un "List" de "instructor"
             List<Administrador> lista = new ArrayList<>();
