@@ -29,7 +29,7 @@ public class ModeloCliente extends Cliente {
 
         return conpg.accion(sql);
     }
-     public boolean modificarInstructor() {
+     public boolean modificarCliente() {
         String sql = "UPDATE cliente SET cli_tipodemembresia = '" + getCliente_tipomembresia() + "' WHERE cli_codigo = " + getCliente_codigo() + ";";
 
         return conpg.accion(sql);
@@ -46,7 +46,7 @@ public class ModeloCliente extends Cliente {
             //Me retorna un "List" de "instructor"
             List<Cliente> lista = new ArrayList<>();
 
-            String sql = "select * from persona p, cliente c where p.per_codigo = c.cli_codper;";
+            String sql = "select * from persona p, cliente c where p.per_codigo = c.cli_codper and cli_estado = 'A' ;";
 
             ResultSet rs = conpg.consulta(sql); //La consulta nos devuelve un "ResultSet"
 
