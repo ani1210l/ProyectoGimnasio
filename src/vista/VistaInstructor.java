@@ -242,14 +242,17 @@ public class VistaInstructor extends javax.swing.JInternalFrame {
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 76, -1, -1));
         jPanel2.add(txtCodigoInstructor, new org.netbeans.lib.awtextra.AbsoluteConstraints(822, 76, 45, -1));
 
+        horario.add(Vespertino);
         Vespertino.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         Vespertino.setText("Vespertino");
         jPanel2.add(Vespertino, new org.netbeans.lib.awtextra.AbsoluteConstraints(732, 136, -1, -1));
 
+        horario.add(Matutino);
         Matutino.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         Matutino.setText("Matutino");
         jPanel2.add(Matutino, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 136, -1, -1));
 
+        horario.add(Nocturno);
         Nocturno.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         Nocturno.setText("Nocturno");
         jPanel2.add(Nocturno, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 186, -1, -1));
@@ -299,7 +302,7 @@ public class VistaInstructor extends javax.swing.JInternalFrame {
         );
         jDlgInstructorLayout.setVerticalGroup(
             jDlgInstructorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -371,13 +374,13 @@ public class VistaInstructor extends javax.swing.JInternalFrame {
 
         tblInstructor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Cédula", "Nombre", "Apellido", "Área de trabajo", "Horario"
+                "Código de instructor", "Cédula", "Nombre", "Apellido", "Área de trabajo", "Horario"
             }
         ));
         jScrollPane1.setViewportView(tblInstructor);
