@@ -7,6 +7,8 @@ import javax.swing.JDialog;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
+//@author santiafo
+
 public class VistaCliente extends javax.swing.JInternalFrame {
 
     public VistaCliente() {
