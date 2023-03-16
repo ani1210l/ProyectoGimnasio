@@ -11,20 +11,21 @@ import vista.VistaPrincipal;
 import vista.VistaServicio;
 
 public class ControladorPrincipal {
-
+    
     VistaPrincipal vistaPrincipal;
-
+    
     public ControladorPrincipal(VistaPrincipal vistaPrincipal) {
         this.vistaPrincipal = vistaPrincipal;
         vistaPrincipal.setVisible(true);
     }
-
+    
     public void iniciarControl() {
         vistaPrincipal.getBtnInstructor().addActionListener(l -> crudInstructor());
         vistaPrincipal.getBtnNutricionista().addActionListener(l -> crudNutricionista());
         vistaPrincipal.getBtnCliente().addActionListener(l -> crudCliente());
+        vistaPrincipal.getBtnServicio().addActionListener(l -> crudServicio());
     }
-
+    
     public void crudInstructor() {
         //Instancio las clases del Modelo y la Vista.
         VistaInstructor vista = new VistaInstructor();
@@ -32,11 +33,11 @@ public class ControladorPrincipal {
 
         //Agregar Vista Personas al Desktop Pane.
         vistaPrincipal.getEscritorioPrincipal().add(vista);
-
+        
         ControladorInstructor control = new ControladorInstructor(modelo, vista);
         control.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
     }
-
+    
     public void crudNutricionista() {
         //Instancio las clases del Modelo y la Vista.
         VistaNutricionista vista = new VistaNutricionista();
@@ -44,11 +45,11 @@ public class ControladorPrincipal {
 
         //Agregar Vista Personas al Desktop Pane.
         vistaPrincipal.getEscritorioPrincipal().add(vista);
-
+        
         ControladorNutricionista control = new ControladorNutricionista(modelo, vista);
         control.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
     }
-
+    
     public void crudCliente() {
         //Instancio las clases del Modelo y la Vista.
         VistaCliente vista = new VistaCliente();
@@ -56,11 +57,11 @@ public class ControladorPrincipal {
 
         //Agregar Vista Personas al Desktop Pane.
         vistaPrincipal.getEscritorioPrincipal().add(vista);
-
+        
         ControladorCliente control = new ControladorCliente(modelo, vista);
         control.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
     }
-
+    
     public void crudServicio() {
         //Instancio las clases del Modelo y la Vista.
         VistaServicio vista = new VistaServicio();
@@ -68,7 +69,7 @@ public class ControladorPrincipal {
 
         //Agregar Vista Personas al Desktop Pane.
         vistaPrincipal.getEscritorioPrincipal().add(vista);
-
+        
         ControladorServicio control = new ControladorServicio(modelo, vista);
         control.iniciarControl();//Empezamos las escuchas a los eventos de la vista, Listeners.
     }
