@@ -250,7 +250,7 @@ public class VistaCliente extends javax.swing.JInternalFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel16.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(51, 102, 255));
@@ -317,13 +317,13 @@ public class VistaCliente extends javax.swing.JInternalFrame {
 
         tblCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Código de cliente", "Cédula", "Nombre", "Apellido", "Teléfono", "Fecha ingreso", "Tiempo de contratación"
+                "Código de cliente", "Cédula", "Nombre", "Apellido", "Teléfono", "Tipo de membresia"
             }
         ));
         jScrollPane1.setViewportView(tblCliente);
