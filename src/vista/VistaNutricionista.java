@@ -4,6 +4,8 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JRadioButton;
+import javax.swing.JSpinner;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 public class VistaNutricionista extends javax.swing.JFrame {
@@ -12,92 +14,12 @@ public class VistaNutricionista extends javax.swing.JFrame {
         initComponents();
     }
 
-    public JRadioButton getMatutino() {
-        return Matutino;
+    public JButton getBtnActualizar() {
+        return btnActualizar;
     }
 
-    public void setMatutino(JRadioButton Matutino) {
-        this.Matutino = Matutino;
-    }
-
-    public JRadioButton getVespertino() {
-        return Vespertino;
-    }
-
-    public void setVespertino(JRadioButton Vespertino) {
-        this.Vespertino = Vespertino;
-    }
-
-    public JDateChooser getFechaDeNacimientonutri() {
-        return fechaDeNacimientonutri;
-    }
-
-    public void setFechaDeNacimientonutri(JDateChooser fechaDeNacimientonutri) {
-        this.fechaDeNacimientonutri = fechaDeNacimientonutri;
-    }
-
-    public JTextField getTxtApellidonutri() {
-        return txtApellidonutri;
-    }
-
-    public void setTxtApellidonutri(JTextField txtApellidonutri) {
-        this.txtApellidonutri = txtApellidonutri;
-    }
-
-    public JTextField getTxtBuscarnutri() {
-        return txtBuscarnutri;
-    }
-
-    public void setTxtBuscarnutri(JTextField txtBuscarnutri) {
-        this.txtBuscarnutri = txtBuscarnutri;
-    }
-
-    public JTextField getTxtCedulanutri() {
-        return txtCedulanutri;
-    }
-
-    public void setTxtCedulanutri(JTextField txtCedulanutri) {
-        this.txtCedulanutri = txtCedulanutri;
-    }
-
-    public JTextField getTxtDireccionnutri() {
-        return txtDireccionnutri;
-    }
-
-    public void setTxtDireccionnutri(JTextField txtDireccionnutri) {
-        this.txtDireccionnutri = txtDireccionnutri;
-    }
-
-    public JTextField getTxtNombrenutri() {
-        return txtNombrenutri;
-    }
-
-    public void setTxtNombrenutri(JTextField txtNombrenutri) {
-        this.txtNombrenutri = txtNombrenutri;
-    }
-
-    public JTextField getTxtRutina() {
-        return txtRutina;
-    }
-
-    public void setTxtRutina(JTextField txtRutina) {
-        this.txtRutina = txtRutina;
-    }
-
-    public JTextField getTxtTelefononutri() {
-        return txtTelefononutri;
-    }
-
-    public void setTxtTelefononutri(JTextField txtTelefononutri) {
-        this.txtTelefononutri = txtTelefononutri;
-    }
-
-    public JButton getBtnActualizarNUTRI() {
-        return btnActualizarNUTRI;
-    }
-
-    public void setBtnActualizarNUTRI(JButton btnActualizarNUTRI) {
-        this.btnActualizarNUTRI = btnActualizarNUTRI;
+    public void setBtnActualizar(JButton btnActualizar) {
+        this.btnActualizar = btnActualizar;
     }
 
     public JButton getBtnCancelar() {
@@ -108,20 +30,20 @@ public class VistaNutricionista extends javax.swing.JFrame {
         this.btnCancelar = btnCancelar;
     }
 
-    public JButton getBtnCrearNUTRI() {
-        return btnCrearNUTRI;
+    public JButton getBtnCrear() {
+        return btnCrear;
     }
 
-    public void setBtnCrearNUTRI(JButton btnCrearNUTRI) {
-        this.btnCrearNUTRI = btnCrearNUTRI;
+    public void setBtnCrear(JButton btnCrear) {
+        this.btnCrear = btnCrear;
     }
 
-    public JButton getBtnEliminarNUTRI() {
-        return btnEliminarNUTRI;
+    public JButton getBtnEliminar() {
+        return btnEliminar;
     }
 
-    public void setBtnEliminarNUTRI(JButton btnEliminarNUTRI) {
-        this.btnEliminarNUTRI = btnEliminarNUTRI;
+    public void setBtnEliminar(JButton btnEliminar) {
+        this.btnEliminar = btnEliminar;
     }
 
     public JButton getBtnGuardar() {
@@ -132,19 +54,93 @@ public class VistaNutricionista extends javax.swing.JFrame {
         this.btnGuardar = btnGuardar;
     }
 
-    public JButton getBtnModificarNUTRI() {
-        return btnModificarNUTRI;
+    public JButton getBtnModificar() {
+        return btnModificar;
     }
 
-    public void setBtnModificarNUTRI(JButton btnModificarNUTRI) {
-        this.btnModificarNUTRI = btnModificarNUTRI;
+    public void setBtnModificar(JButton btnModificar) {
+        this.btnModificar = btnModificar;
+    }
+
+    public JDateChooser getFechaDeNacimiento() {
+        return fechaDeNacimiento;
+    }
+
+    public void setFechaDeNacimiento(JDateChooser fechaDeNacimiento) {
+        this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
     public JDialog getjDialogNutricionista() {
         return jDialogNutricionista;
     }
 
-   
+    public void setjDialogNutricionista(JDialog jDialogNutricionista) {
+        this.jDialogNutricionista = jDialogNutricionista;
+    }
+
+    public JSpinner getSpinnerAniosExperiencia() {
+        return spinnerAniosExperiencia;
+    }
+
+    public void setSpinnerAniosExperiencia(JSpinner spinnerAniosExperiencia) {
+        this.spinnerAniosExperiencia = spinnerAniosExperiencia;
+    }
+
+    public JTable getTblNutricionista() {
+        return tblNutricionista;
+    }
+
+    public void setTblNutricionista(JTable tblNutricionista) {
+        this.tblNutricionista = tblNutricionista;
+    }
+
+    public JTextField getTxtApellido() {
+        return txtApellido;
+    }
+
+    public void setTxtApellido(JTextField txtApellido) {
+        this.txtApellido = txtApellido;
+    }
+
+    public JTextField getTxtBuscar() {
+        return txtBuscar;
+    }
+
+    public void setTxtBuscar(JTextField txtBuscar) {
+        this.txtBuscar = txtBuscar;
+    }
+
+    public JTextField getTxtCedula() {
+        return txtCedula;
+    }
+
+    public void setTxtCedula(JTextField txtCedula) {
+        this.txtCedula = txtCedula;
+    }
+
+    public JTextField getTxtDireccion() {
+        return txtDireccion;
+    }
+
+    public void setTxtDireccion(JTextField txtDireccion) {
+        this.txtDireccion = txtDireccion;
+    }
+
+    public JTextField getTxtNombre() {
+        return txtNombre;
+    }
+
+    public void setTxtNombre(JTextField txtNombre) {
+        this.txtNombre = txtNombre;
+    }
+
+    public JTextField getTxtTelefono() {
+        return txtTelefono;
+    }
+
+    public void setTxtTelefono(JTextField txtTelefono) {
+        this.txtTelefono = txtTelefono;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -152,186 +148,100 @@ public class VistaNutricionista extends javax.swing.JFrame {
 
         jDialogNutricionista = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtCedulanutri = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtNombrenutri = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        txtApellidonutri = new javax.swing.JTextField();
+        txtCedula = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
+        fechaDeNacimiento = new com.toedter.calendar.JDateChooser();
+        jLabel15 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        txtTelefononutri = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtDireccionnutri = new javax.swing.JTextField();
-        fechaDeNacimientonutri = new com.toedter.calendar.JDateChooser();
-        jLabel7 = new javax.swing.JLabel();
-        txtRutina = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        Vespertino = new javax.swing.JRadioButton();
-        Matutino = new javax.swing.JRadioButton();
+        txtDireccion = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        spinnerAniosExperiencia = new javax.swing.JSpinner();
         jPanel1 = new javax.swing.JPanel();
-        txtBuscarnutri = new javax.swing.JTextField();
+        txtBuscar = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btnCrearNUTRI = new javax.swing.JButton();
-        btnModificarNUTRI = new javax.swing.JButton();
-        btnActualizarNUTRI = new javax.swing.JButton();
-        btnEliminarNUTRI = new javax.swing.JButton();
+        btnCrear = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabla_nutri = new javax.swing.JTable();
+        tblNutricionista = new javax.swing.JTable();
 
-        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Registrar nutricionista");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 770, -1));
+
+        jLabel4.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel4.setText("Cedula:");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 76, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel5.setText("Nombre:");
+        jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel6.setText("Nombre:");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
+        jPanel3.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 76, 191, -1));
+        jPanel3.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 116, 191, -1));
+        jPanel3.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 166, 191, -1));
+        jPanel3.add(fechaDeNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 226, 191, -1));
 
-        jLabel6.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel6.setText("Apellido:");
+        jLabel15.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel15.setText("Apellido:");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
-        jLabel8.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         jLabel8.setText("Fecha Nacimiento:");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 226, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel11.setText("TELEFONO:");
+        jLabel11.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel11.setText("Teléfono:");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 286, -1, -1));
+        jPanel3.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 286, 191, -1));
 
-        jLabel9.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel9.setText("Direccion:");
+        jLabel9.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel9.setText("Dirección:");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 344, -1, -1));
+        jPanel3.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 346, 191, -1));
 
-        jLabel7.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel7.setText("Rutina:");
-
-        jLabel10.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
-        jLabel10.setText("Horario:");
-
-        Vespertino.setText("Vespertino");
-
-        Matutino.setText("Matutino");
-
+        btnGuardar.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
         btnGuardar.setText("Guardar");
+        jPanel3.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, -1, -1));
 
+        btnCancelar.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
+        jPanel3.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, -1, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(fechaDeNacimientonutri, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                            .addComponent(txtDireccionnutri)
-                            .addComponent(txtTelefononutri)
-                            .addComponent(txtApellidonutri)
-                            .addComponent(txtNombrenutri)
-                            .addComponent(txtCedulanutri))
-                        .addGap(50, 50, 50)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel7)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnGuardar)
-                        .addGap(132, 132, 132)
-                        .addComponent(btnCancelar)))
-                .addGap(14, 14, 14)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtRutina, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(Matutino)
-                        .addGap(11, 11, 11)
-                        .addComponent(Vespertino)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(txtCedulanutri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(txtNombrenutri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(txtRutina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(Vespertino)
-                            .addComponent(Matutino))))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(txtApellidonutri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(fechaDeNacimientonutri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(txtTelefononutri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(txtDireccionnutri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
-                    .addComponent(btnCancelar))
-                .addGap(45, 45, 45))
-        );
+        jLabel5.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
+        jLabel5.setText("Años de experiencia:");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(466, 75, -1, -1));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        spinnerAniosExperiencia.setModel(new javax.swing.SpinnerNumberModel());
+        jPanel3.add(spinnerAniosExperiencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 80, -1));
 
         javax.swing.GroupLayout jDialogNutricionistaLayout = new javax.swing.GroupLayout(jDialogNutricionista.getContentPane());
         jDialogNutricionista.getContentPane().setLayout(jDialogNutricionistaLayout);
         jDialogNutricionistaLayout.setHorizontalGroup(
             jDialogNutricionistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialogNutricionistaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jDialogNutricionistaLayout.setVerticalGroup(
             jDialogNutricionistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialogNutricionistaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -349,13 +259,13 @@ public class VistaNutricionista extends javax.swing.JFrame {
 
         jLabel1.setText("Buscar:");
 
-        btnCrearNUTRI.setText("Guardar");
+        btnCrear.setText("Guardar");
 
-        btnModificarNUTRI.setText("Modificar");
+        btnModificar.setText("Modificar");
 
-        btnActualizarNUTRI.setText("Actualizar");
+        btnActualizar.setText("Actualizar");
 
-        btnEliminarNUTRI.setText("Eliminar");
+        btnEliminar.setText("Eliminar");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LOGO.jpg"))); // NOI18N
 
@@ -373,17 +283,17 @@ public class VistaNutricionista extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtBuscarnutri, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel12)
-                        .addGap(91, 91, 91)
-                        .addComponent(btnCrearNUTRI)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                        .addComponent(btnModificarNUTRI)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
+                        .addComponent(btnCrear)
+                        .addGap(44, 44, 44)
+                        .addComponent(btnModificar)
                         .addGap(36, 36, 36)
-                        .addComponent(btnActualizarNUTRI)
+                        .addComponent(btnActualizar)
                         .addGap(39, 39, 39)
-                        .addComponent(btnEliminarNUTRI)
+                        .addComponent(btnEliminar)
                         .addGap(14, 14, 14))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
@@ -410,17 +320,17 @@ public class VistaNutricionista extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBuscarnutri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(btnCrearNUTRI)
-                    .addComponent(btnModificarNUTRI)
-                    .addComponent(btnActualizarNUTRI)
-                    .addComponent(btnEliminarNUTRI)
+                    .addComponent(btnCrear)
+                    .addComponent(btnModificar)
+                    .addComponent(btnActualizar)
+                    .addComponent(btnEliminar)
                     .addComponent(jLabel12))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
-        tabla_nutri.setModel(new javax.swing.table.DefaultTableModel(
+        tblNutricionista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -428,47 +338,24 @@ public class VistaNutricionista extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Cedula", "Nombre", "Apellido", "Rutina", "Horario"
+                "Código de nutricionista", "Cédula", "Nombre", "Apellido", "Años de experiencia"
             }
         ));
-        jScrollPane1.setViewportView(tabla_nutri);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
+        jScrollPane1.setViewportView(tblNutricionista);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE))
         );
 
         pack();
@@ -476,42 +363,38 @@ public class VistaNutricionista extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton Matutino;
-    private javax.swing.JRadioButton Vespertino;
-    private javax.swing.JButton btnActualizarNUTRI;
+    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnCrearNUTRI;
-    private javax.swing.JButton btnEliminarNUTRI;
+    private javax.swing.JButton btnCrear;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnModificarNUTRI;
-    private com.toedter.calendar.JDateChooser fechaDeNacimientonutri;
+    private javax.swing.JButton btnModificar;
+    private com.toedter.calendar.JDateChooser fechaDeNacimiento;
     private javax.swing.JDialog jDialogNutricionista;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tabla_nutri;
-    private javax.swing.JTextField txtApellidonutri;
-    private javax.swing.JTextField txtBuscarnutri;
-    private javax.swing.JTextField txtCedulanutri;
-    private javax.swing.JTextField txtDireccionnutri;
-    private javax.swing.JTextField txtNombrenutri;
-    private javax.swing.JTextField txtRutina;
-    private javax.swing.JTextField txtTelefononutri;
+    private javax.swing.JSpinner spinnerAniosExperiencia;
+    private javax.swing.JTable tblNutricionista;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtBuscar;
+    private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtDireccion;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
