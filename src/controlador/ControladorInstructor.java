@@ -12,16 +12,19 @@ import modelo.Instructor;
 import modelo.ModeloInstructor;
 import modelo.ModeloPersona;
 import vista.VistaInstructor;
+import vista.VistaPrincipal;
 
 public class ControladorInstructor {
 
     ModeloInstructor modelo;
     VistaInstructor vista;
+    VistaPrincipal p = new VistaPrincipal();
 
     public ControladorInstructor(ModeloInstructor modelo, VistaInstructor vista) {
         this.modelo = modelo;
         this.vista = vista;
         vista.setVisible(true);
+        vista.setSize(p.getEscritorioPrincipal().getWidth(), p.getEscritorioPrincipal().getHeight());
         cargarTablaDeInstructores();
     }
 
