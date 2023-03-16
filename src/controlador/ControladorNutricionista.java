@@ -30,16 +30,19 @@ public class ControladorNutricionista {
         vista.getBtnActualizar().addActionListener(l -> cargarTablaDeNutricionista());
         vista.getBtnModificar().addActionListener(l -> cargarDatosNutricionistaEnTXT());
         vista.getBtnEliminar().addActionListener(l -> eliminarNutricionista());
+        vista.getBtnCancelar().addActionListener(l -> cancelar());
 
+        buscarRegistros();
+        cargarTablaDeNutricionista();
     }
 
     public void abrirJDlgNutricionista() {
         vista.getjDlgNutricionista().setVisible(true);
-        vista.getjDlgNutricionista().setSize(809, 460);
+        vista.getjDlgNutricionista().setSize(819, 470);
         vista.getjDlgNutricionista().setLocationRelativeTo(null);
         vista.getjDlgNutricionista().setName("Crear nuevo nutricionista");
         vista.getjDlgNutricionista().setTitle("Crear nuevo nutricionista");
-
+        cargarTablaDeNutricionista();
         //QUITAR VISIBILIDAD DEL CODIGO DEL INSTRUCTOR
         vista.getTxtCodigoNutricionista().setVisible(false);
     }
@@ -144,7 +147,7 @@ public class ControladorNutricionista {
             //Abrir jDialog de campos de Docente
             vista.getjDlgNutricionista().setVisible(true);
             vista.getjDlgNutricionista().setName("Modificar nutricionista");
-            vista.getjDlgNutricionista().setSize(889, 495);
+            vista.getjDlgNutricionista().setSize(819, 470);
             vista.getjDlgNutricionista().setLocationRelativeTo(null);
             vista.getjDlgNutricionista().setTitle("Modificar nutricionista");
 
@@ -169,7 +172,7 @@ public class ControladorNutricionista {
                     //Cargar datos de instructor
                     vista.getTxtCodigoNutricionista().setText(String.valueOf(nutricionista.getNutri_codigo()));
                     vista.getSpinnerAniosExperiencia().setValue(nutricionista.getNutri_aniosExperiencia());
-
+                    bloquearcampos();
                 }
             });
         }
@@ -248,4 +251,11 @@ public class ControladorNutricionista {
         vista.getTxtBuscar().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener 
     }
 
+    public void bloquearcampos() {
+        vista.getTxtCedula().setEditable(false);
+    }
+
+    public void cancelar() {
+        vista.getjDlgNutricionista().setVisible(false);
+    }
 }
