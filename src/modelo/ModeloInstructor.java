@@ -46,7 +46,7 @@ public class ModeloInstructor extends Instructor {
             //Me retorna un "List" de "instructor"
             List<Instructor> lista = new ArrayList<>();
 
-            String sql = "select * from persona p, instructor i where p.per_codigo = i.ins_codper;";
+            String sql = "select * from persona p, instructor i where p.per_codigo = i.ins_codper and ins_estado = 'A';";
 
             ResultSet rs = conpg.consulta(sql); //La consulta nos devuelve un "ResultSet"
 

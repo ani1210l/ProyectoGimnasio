@@ -18,9 +18,8 @@ public class ModeloNutricionista extends Nutricionista {
     }
 
     public boolean crearNutricionista() {
-        String sql = "INSERT INTO nutricionista(nut_codper, nut_aniosexperiencia, nutri_estado)VALUES (" + getNutri_codper() + ", " + getNutri_aniosExperiencia()+ "', 'A');";
+        String sql = "INSERT INTO nutricionista(nut_codper, nut_aniosexperiencia, nut_estado)VALUES (" + getNutri_codper() + ", " + getNutri_aniosExperiencia() + ", 'A');";
 
         return conpg.accion(sql);
     }
-
 }

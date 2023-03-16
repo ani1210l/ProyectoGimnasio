@@ -9,6 +9,13 @@ public class ModeloPersona extends Persona {
 
     ConexionPG conpg = new ConexionPG();
 
+    //ELIMINAR PERSONA EN CASO DE NO CREARSE LA CLASE QUE HEREDA
+    public boolean eliminarPersonaNoCreada(String cedula) {
+        String sql = "DELETE FROM persona where per_cedula = '" + cedula + "';";
+
+        return conpg.accion(sql);
+    }
+
     public boolean crearPersona() {
         String sql = "INSERT INTO persona(per_cedula, per_nombre, per_apellido, per_fechaNac, per_telefono, per_direccion) VALUES ('" + getPer_cedula() + "', '" + getPer_nombre() + "', '" + getPer_apellido() + "', '" + getPer_fechaNac() + "', '" + getPer_telefono() + "', '" + getPer_direccion() + "');";
 
