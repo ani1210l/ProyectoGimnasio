@@ -38,7 +38,7 @@ public class ControladorInstructor {
         vista.getjDlgInstructor().setLocationRelativeTo(null);
         vista.getjDlgInstructor().setName("Crear nuevo instructor");
         vista.getjDlgInstructor().setTitle("Crear nuevo instructor");
-        
+
         //Quitar visibilidad del codigo del instructor
         vista.getTxtCodigoInstructor().setVisible(false);
 
@@ -174,8 +174,8 @@ public class ControladorInstructor {
             vista.getjDlgInstructor().setSize(889, 495);
             vista.getjDlgInstructor().setLocationRelativeTo(null);
             vista.getjDlgInstructor().setTitle("Modificar instructor");
-            
-            //Quitar visibilidad
+
+            //Quitar visibilidad y limpiar boton group
             vista.getTxtCodigoInstructor().setVisible(false);
 
             //ModeloPersona modeloPersona = new ModeloPersona();
