@@ -1,21 +1,22 @@
 package controlador;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import modelo.Instructor;
 import modelo.ModeloInstructor;
 import modelo.ModeloPersona;
 import vista.VistaInstructor;
-import vista.VistaPrincipal;
 
 public class ControladorInstructor {
 
     ModeloInstructor modelo;
     VistaInstructor vista;
-
-    VistaPrincipal p = new VistaPrincipal();
 
     public ControladorInstructor(ModeloInstructor modelo, VistaInstructor vista) {
         this.modelo = modelo;
@@ -29,6 +30,8 @@ public class ControladorInstructor {
         vista.getBtnGuardar().addActionListener(l -> crearModificarInstructor());
         vista.getBtnActualizar().addActionListener(l -> cargarTablaDeInstructores());
         vista.getBtnModificar().addActionListener(l -> cargarDatosInstructoresEnTXT());
+        vista.getBtnEliminar().addActionListener(l -> eliminarInstructor());
+        buscarRegistros();
     }
 
     public void abrirjDlgInstructor() {
@@ -101,6 +104,7 @@ public class ControladorInstructor {
                         vista.getjDlgInstructor().setVisible(false);
                     } else {
                         JOptionPane.showMessageDialog(null, "No se pudo registrar la informacioón");
+                        persona.eliminarPersonaNoCreada(vista.getTxtCedula().getText());
                     }
                 } else {
                     System.out.println("Error: No se registrar la persona");
@@ -175,7 +179,7 @@ public class ControladorInstructor {
             vista.getjDlgInstructor().setLocationRelativeTo(null);
             vista.getjDlgInstructor().setTitle("Modificar instructor");
 
-            //Quitar visibilidad y limpiar boton group
+            //Quitar visibilidad
             vista.getTxtCodigoInstructor().setVisible(false);
 
             //ModeloPersona modeloPersona = new ModeloPersona();
@@ -213,5 +217,68 @@ public class ControladorInstructor {
                 }
             });
         }
+    }
+
+    public void eliminarInstructor() {
+
+        int fila = vista.getTblInstructor().getSelectedRow();
+
+        if (fila == -1) {
+            JOptionPane.showMessageDialog(null, "Aun no ha seleccionado una fila");
+        } else {
+
+            int response = JOptionPane.showConfirmDialog(vista, "¿Seguro que desea eliminar esta información?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (response == JOptionPane.YES_OPTION) {
+
+                int codigoInstructor;
+                codigoInstructor = Integer.parseInt(vista.getTblInstructor().getValueAt(fila, 0).toString());
+
+                if (modelo.eliminarInstructor(codigoInstructor)) {
+                    JOptionPane.showMessageDialog(null, "El registro se elimino satisfactoriamente");
+                    cargarTablaDeInstructores();//Actualizo la tabla con los datos
+                } else {
+                    JOptionPane.showMessageDialog(null, "El registro no se pudo eliminar");
+                }
+            }
+        }
+    }
+
+    //El buscar funciona directamente con la tabla no con la BD
+    public void buscarRegistros() {
+
+        KeyListener eventoTeclado = new KeyListener() {//Crear un objeto de tipo keyListener(Es una interface) por lo tanto se debe implementar sus metodos abstractos
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+                //CODIGO PARA FILTRAR LOS DATOS DIRECTAMENTE DE LA TABLA. NO ELIMINAR. SI FUNCIONA. ES MUY IMPORTANTE
+                TableRowSorter<DefaultTableModel> filtrar;
+
+                DefaultTableModel tabla = (DefaultTableModel) vista.getTblInstructor().getModel();
+
+                //vista.getTablaconduccion().setAutoCreateRowSorter(true);
+                filtrar = new TableRowSorter<>(tabla);
+                vista.getTblInstructor().setRowSorter(filtrar);
+
+                try {
+
+                    filtrar.setRowFilter(RowFilter.regexFilter(vista.getTxtBuscar().getText())); //Se pasa como parametro el campo de donde se va a obtener la informacion y el (3) es la columna con la cual va a buscar las coincidencias
+                } catch (Exception ex) {
+                    System.out.println("Error: " + ex);
+                }
+            }
+        };
+
+        vista.getTxtBuscar().addKeyListener(eventoTeclado); //"addKeyListener" es un metodo que se le tiene que pasar como argumento un objeto de tipo keyListener 
     }
 }

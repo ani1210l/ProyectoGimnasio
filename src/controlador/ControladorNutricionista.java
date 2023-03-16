@@ -5,14 +5,11 @@ import javax.swing.JOptionPane;
 import modelo.ModeloNutricionista;
 import modelo.ModeloPersona;
 import vista.VistaNutricionista;
-import vista.VistaPrincipal;
 
 public class ControladorNutricionista {
 
     ModeloNutricionista modelo;
     VistaNutricionista vista;
-
-    VistaPrincipal p = new VistaPrincipal();
 
     public ControladorNutricionista(ModeloNutricionista modelo, VistaNutricionista vista) {
         this.modelo = modelo;
@@ -27,16 +24,16 @@ public class ControladorNutricionista {
     }
 
     public void abrirJDlgNutricionista() {
-        vista.getjDialogNutricionista().setVisible(true);
-        vista.getjDialogNutricionista().setSize(809, 460);
-        vista.getjDialogNutricionista().setLocationRelativeTo(null);
-        vista.getjDialogNutricionista().setName("Crear nuevo nutricionista");
-        vista.getjDialogNutricionista().setTitle("Crear nuevo nutricionista");
+        vista.getjDlgNutricionista().setVisible(true);
+        vista.getjDlgNutricionista().setSize(809, 460);
+        vista.getjDlgNutricionista().setLocationRelativeTo(null);
+        vista.getjDlgNutricionista().setName("Crear nuevo nutricionista");
+        vista.getjDlgNutricionista().setTitle("Crear nuevo nutricionista");
     }
 
     public void crearModificarNutricionista() {
 
-        if ("Crear nuevo nutricionista".equals(vista.getjDialogNutricionista().getName())) {
+        if ("Crear nuevo nutricionista".equals(vista.getjDlgNutricionista().getName())) {
 
             //Validar datos
             ModeloPersona persona = new ModeloPersona();
@@ -64,6 +61,7 @@ public class ControladorNutricionista {
                         JOptionPane.showMessageDialog(null, "Se creo exitosamente");
                     } else {
                         JOptionPane.showMessageDialog(null, "No se pudo registrar");
+                        persona.eliminarPersonaNoCreada(vista.getTxtCedula().getText());
                     }
                 } else {
                     System.out.println("Error");
@@ -74,5 +72,4 @@ public class ControladorNutricionista {
         }
 
     }
-
 }

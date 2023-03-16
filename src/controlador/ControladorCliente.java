@@ -1,41 +1,35 @@
 package controlador;
 
-import java.util.Date;
-import javax.swing.JOptionPane;
 import modelo.ModeloCliente;
-import modelo.ModeloPersona;
 import vista.VistaCliente;
-
-import vista.VistaPrincipal;
 
 public class ControladorCliente {
 
     ModeloCliente modelo;
     VistaCliente vista;
 
-    VistaPrincipal p = new VistaPrincipal();
-
     public ControladorCliente(ModeloCliente modelo, VistaCliente vista) {
         this.modelo = modelo;
         this.vista = vista;
+        vista.setVisible(true);
     }
 
     public void iniciarControl() {
-        vista.getBtnCrearcliente().addActionListener(l -> abrirjDlgCliente());
-       // vista.getBtnGuardarcliente().addActionListener(l -> crearModificarCliente());
+        //vista.getBtnCrearcliente().addActionListener(l -> abrirjDlgCliente());
+        // vista.getBtnGuardarcliente().addActionListener(l -> crearModificarCliente());
     }
 
-    public void abrirjDlgCliente() {
+//    public void abrirjDlgCliente() {
+//
+//        vista.getjDialogCliente().setVisible(true);
+//        vista.getjDialogCliente().setSize(809, 460);
+//        vista.getjDialogCliente().setLocationRelativeTo(null);
+//        vista.getjDialogCliente().setName("Crear nuevo Cliente");
+//        vista.getjDialogCliente().setTitle("Crear nuevo Cliente");
+//
+//    }
 
-        vista.getjDialogCliente().setVisible(true);
-        vista.getjDialogCliente().setSize(809, 460);
-        vista.getjDialogCliente().setLocationRelativeTo(null);
-        vista.getjDialogCliente().setName("Crear nuevo Cliente");
-        vista.getjDialogCliente().setTitle("Crear nuevo Cliente");
-
-    }
-
-  /*  public void crearModificarCliente() {
+    /*  public void crearModificarCliente() {
 
         if ("Crear nuevo Cliente".equals(vista.getjDialogCliente().getName())) {
 
@@ -77,6 +71,4 @@ public class ControladorCliente {
                 JOptionPane.showMessageDialog(null, "El numero de cedula ya se encuentra registrado en la base de datos");
             }
         }*/
-    }
-
-
+}
