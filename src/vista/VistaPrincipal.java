@@ -25,12 +25,30 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.escritorioPrincipal = escritorioPrincipal;
     }
 
+    public JButton getBtnNutricionista() {
+        return btnNutricionista;
+    }
+
+    public void setBtnNutricionista(JButton btnNutricionista) {
+        this.btnNutricionista = btnNutricionista;
+    }
+
+    public JButton getBtnCliente() {
+        return btnCliente;
+    }
+
+    public void setBtnCliente(JButton btnCliente) {
+        this.btnCliente = btnCliente;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         btnInstructor = new javax.swing.JButton();
+        btnNutricionista = new javax.swing.JButton();
+        btnCliente = new javax.swing.JButton();
         escritorioPrincipal = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -39,21 +57,32 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         btnInstructor.setText("Instructor");
 
+        btnNutricionista.setText("Nutricionista");
+
+        btnCliente.setText("Cliente");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(btnInstructor)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCliente)
+                    .addComponent(btnNutricionista)
+                    .addComponent(btnInstructor))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addComponent(btnInstructor)
-                .addContainerGap(409, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(btnNutricionista)
+                .addGap(34, 34, 34)
+                .addComponent(btnCliente)
+                .addContainerGap(295, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout escritorioPrincipalLayout = new javax.swing.GroupLayout(escritorioPrincipal);
@@ -87,7 +116,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCliente;
     private javax.swing.JButton btnInstructor;
+    private javax.swing.JButton btnNutricionista;
     private javax.swing.JDesktopPane escritorioPrincipal;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
