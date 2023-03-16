@@ -3,10 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/monge/OneDrive/Documentos/NetBeansProjects/Proyecto_Gimnasio/src/vista/VistaInstructor.java</file>
-            <file>file:/C:/Users/monge/OneDrive/Documentos/NetBeansProjects/Proyecto_Gimnasio/src/modelo/ModeloInstructor.java</file>
-            <file>file:/C:/Users/monge/OneDrive/Documentos/NetBeansProjects/Proyecto_Gimnasio/src/modelo/ModeloPersona.java</file>
-            <file>file:/C:/Users/monge/OneDrive/Documentos/NetBeansProjects/Proyecto_Gimnasio/src/controlador/ControladorInstructor.java</file>
+            <file>file:/C:/Users/monge/OneDrive/Documentos/GitHub/Proyecto_Gimnasio-1.0/src/modelo/ModeloNutricionista.java</file>
+            <file>file:/C:/Users/monge/OneDrive/Documentos/GitHub/Proyecto_Gimnasio-1.0/src/vista/VistaCliente.java</file>
+            <file>file:/C:/Users/monge/OneDrive/Documentos/GitHub/Proyecto_Gimnasio-1.0/src/controlador/ControladorInstructor.java</file>
+            <file>file:/C:/Users/monge/OneDrive/Documentos/GitHub/Proyecto_Gimnasio-1.0/src/controlador/ControladorNutricionista.java</file>
+            <file>file:/C:/Users/monge/OneDrive/Documentos/GitHub/Proyecto_Gimnasio-1.0/src/vista/VistaPrincipal.java</file>
+            <file>file:/C:/Users/monge/OneDrive/Documentos/GitHub/Proyecto_Gimnasio-1.0/src/vista/VistaNutricionista.java</file>
+            <file>file:/C:/Users/monge/OneDrive/Documentos/GitHub/Proyecto_Gimnasio-1.0/src/modelo/ModeloInstructor.java</file>
+            <file>file:/C:/Users/monge/OneDrive/Documentos/GitHub/Proyecto_Gimnasio-1.0/src/controlador/ControladorPrincipal.java</file>
+            <file>file:/C:/Users/monge/OneDrive/Documentos/GitHub/Proyecto_Gimnasio-1.0/src/vista/VistaInstructor.java</file>
         </group>
     </open-files>
 </project-private>
