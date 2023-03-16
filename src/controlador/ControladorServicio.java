@@ -31,8 +31,8 @@ public class ControladorServicio {
         vista.getBtnGuardar().addActionListener(l -> crearModificarServicio());
         vista.getBtnActualizar().addActionListener(l -> cargarTablaDeServicios());
         vista.getBtnModificar().addActionListener(l -> cargarDatosServiciosEnTXT());
-//        vista.getBtnEliminar().addActionListener(l -> eliminarInstructor());
-//        buscarRegistros();
+        vista.getBtnEliminar().addActionListener(l -> eliminarServicio());
+        buscarRegistros();
     }
 
     public void abrirjDlgServicio() {
@@ -159,12 +159,12 @@ public class ControladorServicio {
             int response = JOptionPane.showConfirmDialog(vista, "¿Seguro que desea eliminar esta información?", "Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (response == JOptionPane.YES_OPTION) {
 
-                int codigoInstructor;
-                codigoInstructor = Integer.parseInt(vista.getTblInstructor().getValueAt(fila, 0).toString());
+                int codigoServicio;
+                codigoServicio = Integer.parseInt(vista.getTblServicio().getValueAt(fila, 0).toString());
 
-                if (modelo.eliminarInstructor(codigoInstructor)) {
+                if (modelo.eliminarServicio(codigoServicio)) {
                     JOptionPane.showMessageDialog(null, "El registro se elimino satisfactoriamente");
-                    cargarTablaDeInstructores();//Actualizo la tabla con los datos
+                    cargarTablaDeServicios();//Actualizo la tabla con los datos
                 } else {
                     JOptionPane.showMessageDialog(null, "El registro no se pudo eliminar");
                 }
@@ -193,11 +193,11 @@ public class ControladorServicio {
                 //CODIGO PARA FILTRAR LOS DATOS DIRECTAMENTE DE LA TABLA. NO ELIMINAR. SI FUNCIONA. ES MUY IMPORTANTE
                 TableRowSorter<DefaultTableModel> filtrar;
 
-                DefaultTableModel tabla = (DefaultTableModel) vista.getTblInstructor().getModel();
+                DefaultTableModel tabla = (DefaultTableModel) vista.getTblServicio().getModel();
 
                 //vista.getTablaconduccion().setAutoCreateRowSorter(true);
                 filtrar = new TableRowSorter<>(tabla);
-                vista.getTblInstructor().setRowSorter(filtrar);
+                vista.getTblServicio().setRowSorter(filtrar);
 
                 try {
 
